@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/tools-shop-front-git/static/css/main.b9d30600.css",
+    "main.js": "/tools-shop-front-git/static/js/main.7a812274.js",
+    "index.html": "/tools-shop-front-git/index.html",
+    "static/media/icon-cart.svg": "/tools-shop-front-git/static/media/icon-cart.03b286662b1a0dc0c1c787a69456b6d9.svg",
+    "static/media/icon-search.svg": "/tools-shop-front-git/static/media/icon-search.78e3aa9ece686ef30158cb7142d5c8ae.svg",
+    "static/media/icon-user.svg": "/tools-shop-front-git/static/media/icon-user.dba038a8c35148413d67dfc5b8185027.svg",
+    "static/media/icon-menu.svg": "/tools-shop-front-git/static/media/icon-menu.1830e26447038447d9e73872aff4a8c8.svg",
+    "main.b9d30600.css.map": "/tools-shop-front-git/static/css/main.b9d30600.css.map",
+    "main.7a812274.js.map": "/tools-shop-front-git/static/js/main.7a812274.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9d30600.css",
+    "static/js/main.7a812274.js"
+  ]
+}
