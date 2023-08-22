@@ -1,0 +1,73 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #da9022;
+  border-radius: 4px;
+}
+
+.label {
+  overflow: hidden;
+  position: relative;
+}
+
+.inputSearch {
+  padding: 10px 10px 9px 40px;
+  height: 36px;
+
+  border: none;
+  border-radius: 2px 0px 0px 2px;
+  cursor: pointer;
+}
+
+.inputSearch::placeholder {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.172;
+}
+
+.button,
+.submit {
+  height: 36px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+
+  padding-right: 20px;
+  padding-left: 20px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.172;
+  border-left: 2px solid #da9022;
+  border-right: 2px solid #da9022;
+  color: #707070;
+}
+
+.submit {
+  display: flex;
+
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.172;
+  background-color: #da9022;
+  color: #ffffff;
+}
+
+.iconSearch {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+
+  fill: #707070;
+}

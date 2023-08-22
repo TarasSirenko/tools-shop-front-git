@@ -1,0 +1,22 @@
+.form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    outline: 1px solid rgb(53, 53, 53);
+    text-align: center;
+}
+
+.input {
+    width: 100%;
+}
+
+.invalid {
+
+    outline: 1px solid tomato;
+
+}
+
+.valid {
+    outline: 1px solid rgb(71, 255, 148);
+
+}
