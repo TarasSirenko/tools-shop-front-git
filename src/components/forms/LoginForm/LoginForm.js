@@ -33,43 +33,55 @@ export default function LoginForm() {
     <>
       <ToastContainer />
       <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-        <input
-          {...register('email', {
-            required: 'Без имени невозможна ваша регистрация',
-            pattern: {
-              value:
-                /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
-              message: 'Имя должно содержать только латинские буквы',
-            },
-          })}
-          type="text"
-          name="email"
-          placeholder="Email"
-          autoComplete="email"
-          className={`${s.input} ${errors.name ? s.invalid : s.valid}`}
-        />
-        <p>{errors.name?.message}</p>
+        <div className={s.formTitleWrap}>
+          <h1 className={s.title}>Увійдіть або виконайте</h1>
+          <button type="button" className={s.registerLink}>
+            Реєстрацію
+          </button>
+        </div>
+        <label className={s.label}>
+          <span className={s.labelTitle}>Пошта</span>
+          <input
+            {...register('email', {
+              required: 'Без имени невозможна ваша регистрация',
+              pattern: {
+                value:
+                  /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
+                message: 'Имя должно содержать только латинские буквы',
+              },
+            })}
+            type="text"
+            name="email"
+            placeholder="Email"
+            autoComplete="email"
+            className={`${s.input} ${errors.name ? s.invalid : s.valid}`}
+          />
+          <p>{errors.name?.message}</p>
+        </label>
+        <label className={s.label}>
+          <span className={s.labelTitle}>Пароль</span>
+          <input
+            {...register('password', {
+              required: 'Без пароля невозможна ваша регистрация',
+              pattern: {
+                value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,16}$/,
+                message:
+                  'Пароль должен быть такого вормата: длина от 4 до 16 символов, только латинские буквы и цифры, должна быть хотя бы одна заглавная буква ',
+              },
+            })}
+            type="password"
+            name="password"
+            placeholder="Password"
+            autoComplete="password"
+            className={`${s.input} ${errors.password ? s.invalid : s.valid}`}
+          />
+          <p>{errors.password?.message}</p>
+        </label>
 
         <input
-          {...register('password', {
-            required: 'Без пароля невозможна ваша регистрация',
-            pattern: {
-              value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,16}$/,
-              message:
-                'Пароль должен быть такого вормата: длина от 4 до 16 символов, только латинские буквы и цифры, должна быть хотя бы одна заглавная буква ',
-            },
-          })}
-          type="password"
-          name="password"
-          placeholder="Password"
-          autoComplete="password"
-          className={`${s.input} ${errors.password ? s.invalid : s.valid}`}
-        />
-        <p>{errors.password?.message}</p>
-
-        <input
+          className={s.submit}
           type="submit"
-          value="Register"
+          value="Вхід"
           onClick={() => handleClick(errors)}
         />
       </form>
