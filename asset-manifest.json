@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/tools-shop-front-git/static/css/main.06be45c4.css",
-    "main.js": "/tools-shop-front-git/static/js/main.1cda0909.js",
+    "main.css": "/tools-shop-front-git/static/css/main.32413a6e.css",
+    "main.js": "/tools-shop-front-git/static/js/main.df5a1fba.js",
     "index.html": "/tools-shop-front-git/index.html",
     "static/media/icon-cart.svg": "/tools-shop-front-git/static/media/icon-cart.03b286662b1a0dc0c1c787a69456b6d9.svg",
     "static/media/icon-search.svg": "/tools-shop-front-git/static/media/icon-search.78e3aa9ece686ef30158cb7142d5c8ae.svg",
     "static/media/icon-user.svg": "/tools-shop-front-git/static/media/icon-user.dba038a8c35148413d67dfc5b8185027.svg",
-    "main.06be45c4.css.map": "/tools-shop-front-git/static/css/main.06be45c4.css.map",
-    "main.1cda0909.js.map": "/tools-shop-front-git/static/js/main.1cda0909.js.map"
+    "main.32413a6e.css.map": "/tools-shop-front-git/static/css/main.32413a6e.css.map",
+    "main.df5a1fba.js.map": "/tools-shop-front-git/static/js/main.df5a1fba.js.map"
   },
   "entrypoints": [
-    "static/css/main.06be45c4.css",
-    "static/js/main.1cda0909.js"
+    "static/css/main.32413a6e.css",
+    "static/js/main.df5a1fba.js"
   ]
 }
