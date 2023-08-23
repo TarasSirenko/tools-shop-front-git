@@ -1,5 +1,5 @@
-import AppBar from './components/AppBar';
-import GeneralContainer from './components/GeneralContainer';
+import AppBar from './components/base/AppBar/AppBar';
+import GeneralContainer from './components/base/GeneralContainer/GeneralContainer';
 
 import { ModalProvider } from './context/ModalContext';
 

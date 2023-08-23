@@ -1,5 +1,5 @@
-import { ReactComponent as IconMenu } from "svgImage/icon-menu.svg";
-import s from "./HeaderTypeTool.module.css";
+import { ReactComponent as IconMenu } from '../../../svgImage/icon-menu.svg';
+import s from './HeaderTypeTool.module.css';
 
 function HeaderTypeTool() {
   return (

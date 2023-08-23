@@ -1,9 +1,9 @@
 import { ReactComponent as IconUser } from 'svgImage/icon-user.svg';
 import { ReactComponent as IconCart } from 'svgImage/icon-cart.svg';
 import React from 'react';
-import { useModalContext } from '../../context/ModalContext';
-import RegisterForm from 'components/RegisterForm/RegisterForm';
-import LoginForm from 'components/LoginForm/LoginForm';
+import { useModalContext } from '../../../context/ModalContext';
+import RegisterForm from 'components/forms/RegisterForm/RegisterForm';
+import LoginForm from 'components/forms/LoginForm/LoginForm';
 
 import s from './HeaderUserMenu.module.css';
 
