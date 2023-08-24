@@ -1,9 +1,9 @@
 import { ReactComponent as IconUser } from 'svgImage/icon-user.svg';
 import { ReactComponent as IconCart } from 'svgImage/icon-cart.svg';
+import { NavLink } from 'react-router-dom';
 import React from 'react';
 import { useModalContext } from '../../../context/ModalContext';
-import RegisterForm from 'components/forms/RegisterForm/RegisterForm';
-import LoginForm from 'components/forms/LoginForm/LoginForm';
+import UserForm from 'components/forms/UserForm';
 
 import s from './HeaderUserMenu.module.css';
 
@@ -11,18 +11,17 @@ function HeaderUserMenu() {
   const { openModal } = useModalContext();
   return (
     <div className={s.container}>
-      <button
-        type="button"
-        className={s.buttonUser}
-        onClick={() => openModal(() => <LoginForm />)}
-      >
-        <IconUser width={32} height={30} />
-      </button>
-      <button
-        type="button"
-        className={s.buttonCart}
-        onClick={() => openModal(<RegisterForm />)}
-      >
+      <NavLink to="/login">
+        <button
+          type="button"
+          className={s.buttonUser}
+          onClick={() => openModal(() => <UserForm />)}
+        >
+          <IconUser width={32} height={30} />
+        </button>
+      </NavLink>
+
+      <button type="button" className={s.buttonCart}>
         <IconCart width={27} height={30} />
       </button>
     </div>

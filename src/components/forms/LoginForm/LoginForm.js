@@ -1,8 +1,10 @@
-import s from './LoginForm.module.css';
-
+import { NavLink } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { Fragment } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-
+import IconPassword from 'svgImage/IconPassword';
+import IconEmail from 'svgImage/IconEmail';
+import s from './LoginForm.module.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function LoginForm() {
@@ -33,43 +35,92 @@ export default function LoginForm() {
     <>
       <ToastContainer />
       <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-        <input
-          {...register('email', {
-            required: 'Без имени невозможна ваша регистрация',
-            pattern: {
-              value:
-                /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
-              message: 'Имя должно содержать только латинские буквы',
-            },
-          })}
-          type="text"
-          name="email"
-          placeholder="Email"
-          autoComplete="email"
-          className={`${s.input} ${errors.name ? s.invalid : s.valid}`}
-        />
-        <p>{errors.name?.message}</p>
+        <div className={s.formTitleWrap}>
+          <h1 className={s.title}>Увійдіть або виконайте</h1>
+          <NavLink to="/register">
+            <button type="button" className={s.registerLink}>
+              Реєстрацію
+            </button>
+          </NavLink>
+        </div>
+        <label className={s.label}>
+          <span className={s.labelTitle}>Пошта</span>
+          <div className={s.inputWrap}>
+            <div className={s.svgWrap}>
+              <IconEmail />
+            </div>
+
+            <input
+              {...register('email', {
+                required: 'Введено невірну адресу електронноі пошти',
+                pattern: {
+                  value: /^[\w.-]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,6})+$/,
+                  message: `Електронна пошта повинна містити:\n 
+                    - лише латинські літери;\n
+                    - символ "@".`,
+                },
+              })}
+              type="text"
+              name="email"
+              placeholder="Email"
+              autoComplete="email"
+              className={`${s.input} ${errors.email ? s.invalid : s.valid}`}
+            />
+          </div>
+
+          {errors.email && (
+            <p className={s.errorMessage}>
+              {errors.email.message.split('\n').map((line, index) => (
+                <Fragment key={index}>
+                  {line}
+                  <br />
+                </Fragment>
+              ))}
+            </p>
+          )}
+        </label>
+        <label className={s.label}>
+          <span className={s.labelTitle}>Пароль</span>
+          <div className={s.inputWrap}>
+            <div className={s.svgWrap}>
+              <IconPassword />
+            </div>
+
+            <input
+              {...register('password', {
+                required: 'Введено невірний пароль',
+                pattern: {
+                  value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,16}$/,
+                  message: `Пароль повинен відповідати такому формату:\n
+        - довжина від 4 до 16 символів;\n
+        - лише латинські літери та цифри;\n
+        - обов'язково має бути хоча б одна велика літера.`,
+                },
+              })}
+              type="password"
+              name="password"
+              placeholder="Password"
+              autoComplete="password"
+              className={`${s.input} ${errors.password ? s.invalid : s.valid}`}
+            />
+          </div>
+
+          {errors.password && (
+            <p className={s.errorMessage}>
+              {errors.password.message.split('\n').map((line, index) => (
+                <Fragment key={index}>
+                  {line}
+                  <br />
+                </Fragment>
+              ))}
+            </p>
+          )}
+        </label>
 
         <input
-          {...register('password', {
-            required: 'Без пароля невозможна ваша регистрация',
-            pattern: {
-              value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,16}$/,
-              message:
-                'Пароль должен быть такого вормата: длина от 4 до 16 символов, только латинские буквы и цифры, должна быть хотя бы одна заглавная буква ',
-            },
-          })}
-          type="password"
-          name="password"
-          placeholder="Password"
-          autoComplete="password"
-          className={`${s.input} ${errors.password ? s.invalid : s.valid}`}
-        />
-        <p>{errors.password?.message}</p>
-
-        <input
+          className={s.submit}
           type="submit"
-          value="Register"
+          value="Вхід"
           onClick={() => handleClick(errors)}
         />
       </form>

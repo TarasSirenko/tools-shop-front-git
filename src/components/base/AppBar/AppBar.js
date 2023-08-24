@@ -1,5 +1,5 @@
 import Container from 'components/base/Container';
-import Navigation from 'components/heder/Navigation';
+import Navigation from 'components/header/Navigation';
 
 import s from './AppBar.module.css';
 function AppBar() {
