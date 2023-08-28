@@ -1,11 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { Fragment } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import IconPassword from 'svgImage/IconPassword';
 import IconEmail from 'svgImage/IconEmail';
+import FormErrorMessage from '../FormErrorMessage';
 import s from './LoginForm.module.css';
-import 'react-toastify/dist/ReactToastify.css';
+import 'animate.css';
 
 export default function LoginForm() {
   const {
@@ -32,7 +34,7 @@ export default function LoginForm() {
   };
 
   return (
-    <>
+    <div className="animate__animated animate__zoomIn animate__faster">
       <ToastContainer />
       <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
         <div className={s.formTitleWrap}>
@@ -69,14 +71,7 @@ export default function LoginForm() {
           </div>
 
           {errors.email && (
-            <p className={s.errorMessage}>
-              {errors.email.message.split('\n').map((line, index) => (
-                <Fragment key={index}>
-                  {line}
-                  <br />
-                </Fragment>
-              ))}
-            </p>
+            <FormErrorMessage errorText={errors.email.message} />
           )}
         </label>
         <label className={s.label}>
@@ -106,14 +101,7 @@ export default function LoginForm() {
           </div>
 
           {errors.password && (
-            <p className={s.errorMessage}>
-              {errors.password.message.split('\n').map((line, index) => (
-                <Fragment key={index}>
-                  {line}
-                  <br />
-                </Fragment>
-              ))}
-            </p>
+            <FormErrorMessage errorText={errors.password.message} />
           )}
         </label>
 
@@ -124,6 +112,6 @@ export default function LoginForm() {
           onClick={() => handleClick(errors)}
         />
       </form>
-    </>
+    </div>
   );
 }

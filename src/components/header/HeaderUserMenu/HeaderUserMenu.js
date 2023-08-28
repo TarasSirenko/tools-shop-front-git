@@ -11,7 +11,7 @@ function HeaderUserMenu() {
   const { openModal } = useModalContext();
   return (
     <div className={s.container}>
-      <NavLink to="/login">
+      <NavLink to="/login" className={s.navLink}>
         <button
           type="button"
           className={s.buttonUser}
@@ -20,10 +20,11 @@ function HeaderUserMenu() {
           <IconUser width={32} height={30} />
         </button>
       </NavLink>
-
-      <button type="button" className={s.buttonCart}>
-        <IconCart width={27} height={30} />
-      </button>
+      <NavLink to="/cart" className={s.navLink}>
+        <button type="button" className={s.buttonCart}>
+          <IconCart width={27} height={30} />
+        </button>
+      </NavLink>
     </div>
   );
 }

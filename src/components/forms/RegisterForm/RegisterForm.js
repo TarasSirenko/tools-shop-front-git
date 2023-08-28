@@ -1,25 +1,24 @@
-import s from './RegisterForm.module.css';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
-import { Fragment } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+
 import IconPassword from 'svgImage/IconPassword';
 import IconEmail from 'svgImage/IconEmail';
 import IconPhone from 'svgImage/IconPhone';
+import FormErrorMessage from '../FormErrorMessage';
 
-// import { useCreateUserMutation } from 'redux/contactsApi/contactsApi';
-
-import 'react-toastify/dist/ReactToastify.css';
+import authOperations from 'redux/auth/auth-operation';
+import s from './RegisterForm.module.css';
 
 export default function RegisterForm() {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
-
-  // const [fetchUser, data] = useCreateUserMutation();
-  // console.log(data);
 
   const handleClick = errors => {
     if (errors.name)
@@ -38,9 +37,7 @@ export default function RegisterForm() {
       });
   };
   const onSubmit = data => {
-    console.log(data);
-    // console.log(fetchUser(JSON.stringify(data)));
-    console.log(data);
+    dispatch(authOperations.register(data));
     reset();
   };
 
@@ -75,14 +72,7 @@ export default function RegisterForm() {
             />
           </div>
           {errors.phone && (
-            <p className={s.errorMessage}>
-              {errors.phone.message.split('\n').map((line, index) => (
-                <Fragment key={index}>
-                  {line}
-                  <br />
-                </Fragment>
-              ))}
-            </p>
+            <FormErrorMessage errorText={errors.phone.message} />
           )}
         </label>
         <label className={s.label}>
@@ -109,14 +99,7 @@ export default function RegisterForm() {
             />
           </div>
           {errors.email && (
-            <p className={s.errorMessage}>
-              {errors.email.message.split('\n').map((line, index) => (
-                <Fragment key={index}>
-                  {line}
-                  <br />
-                </Fragment>
-              ))}
-            </p>
+            <FormErrorMessage errorText={errors.email.message} />
           )}
         </label>
         <label className={s.label}>
@@ -144,14 +127,7 @@ export default function RegisterForm() {
             />
           </div>
           {errors.password && (
-            <p className={s.errorMessage}>
-              {errors.password.message.split('\n').map((line, index) => (
-                <Fragment key={index}>
-                  {line}
-                  <br />
-                </Fragment>
-              ))}
-            </p>
+            <FormErrorMessage errorText={errors.password.message} />
           )}
         </label>
 

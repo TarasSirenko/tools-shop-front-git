@@ -16,7 +16,7 @@
 }
 
 .title {
-  margin-right: 10px;
+  margin-right: 9px;
 
   font-weight: 300;
   font-size: 20px;
@@ -101,16 +101,4 @@
   cursor: pointer;
 
   transition: all 200ms linear;
-}
-
-.errorMessage {
-  margin-top: 5px;
-  color: #ffffff;
-
-  margin-left: 10px;
-  display: block;
-
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 0.6;
 }

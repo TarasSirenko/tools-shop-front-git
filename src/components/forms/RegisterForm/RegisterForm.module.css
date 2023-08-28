@@ -80,15 +80,3 @@
   background-color: #d17218;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-.errorMessage {
-  margin-top: 5px;
-  color: #ffffff;
-
-  margin-left: 10px;
-  display: block;
-
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 0.6;
-}

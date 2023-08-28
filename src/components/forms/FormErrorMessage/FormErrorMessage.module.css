@@ -1,0 +1,11 @@
+.errorMessage {
+  margin-top: 5px;
+  color: #ffffff;
+
+  margin-left: 10px;
+  display: block;
+
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 0.6;
+}
