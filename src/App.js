@@ -4,6 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import { ModalProvider } from './context/ModalContext';
 
+import Hero from 'components/Hero/Hero';
+
 function App() {
   const handleClick = e => {
     console.log(e);
@@ -35,10 +37,12 @@ function App() {
       <ToastContainer />
       <GeneralContainer>
         <AppBar />
+
         <h1 className="taras">Саня</h1>
         <button type="button" onClick={handleClick}>
           Нажми меня если не зассал
         </button>
+        <Hero />
       </GeneralContainer>
     </ModalProvider>
   );
