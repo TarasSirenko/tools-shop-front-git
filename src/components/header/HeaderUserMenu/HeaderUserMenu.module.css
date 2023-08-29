@@ -8,7 +8,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 50px;
 
   border: none;
   background-color: transparent;
@@ -16,6 +15,10 @@
   cursor: pointer;
 
   transition: fill 200ms linear;
+}
+
+.navLink {
+  margin-left: 50px;
 }
 
 .buttonUser:hover,

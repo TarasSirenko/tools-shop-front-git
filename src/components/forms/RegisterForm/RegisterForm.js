@@ -1,21 +1,24 @@
-import s from './RegisterForm.module.css';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
-
-// import { useCreateUserMutation } from 'redux/contactsApi/contactsApi';
-
 import 'react-toastify/dist/ReactToastify.css';
 
+import IconPassword from 'svgImage/IconPassword';
+import IconEmail from 'svgImage/IconEmail';
+import IconPhone from 'svgImage/IconPhone';
+import FormErrorMessage from '../FormErrorMessage';
+
+import authOperations from 'redux/auth/auth-operation';
+import s from './RegisterForm.module.css';
+
 export default function RegisterForm() {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
-
-  // const [fetchUser, data] = useCreateUserMutation();
-  // console.log(data);
 
   const handleClick = errors => {
     if (errors.name)
@@ -34,9 +37,7 @@ export default function RegisterForm() {
       });
   };
   const onSubmit = data => {
-    console.log(data);
-    // console.log(fetchUser(JSON.stringify(data)));
-    console.log(data);
+    dispatch(authOperations.register(data));
     reset();
   };
 
@@ -48,59 +49,86 @@ export default function RegisterForm() {
 
         <label className={s.label}>
           <span className={s.labelTitle}>Телефон</span>
-          <input
-            {...register('phone', {
-              required: 'Без имени невозможна ваша регистрация',
-              pattern: {
-                value:
-                  /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
-                message: 'Имя должно содержать только латинские буквы',
-              },
-            })}
-            type="text"
-            name="phone"
-            placeholder="Phone"
-            autoComplete="phone"
-            className={`${s.input} ${errors.name ? s.invalid : s.valid}`}
-          />
-          <p>{errors.name?.message}</p>
+          <div className={s.inputWrap}>
+            <div className={s.svgWrap}>
+              <IconPhone />
+            </div>
+
+            <input
+              {...register('phone', {
+                required: 'Введіть номер мобільного телефону',
+                pattern: {
+                  value: /^(?:\+380|0)\d{9}$/,
+                  message: `Номер телефону повинен бути такого формату:\n 
+                  0991112233 або +380991112233;
+                  `,
+                },
+              })}
+              type="text"
+              name="phone"
+              placeholder="Phone"
+              autoComplete="phone"
+              className={`${s.input} ${errors.phone ? s.invalid : s.valid}`}
+            />
+          </div>
+          {errors.phone && (
+            <FormErrorMessage errorText={errors.phone.message} />
+          )}
         </label>
         <label className={s.label}>
           <span className={s.labelTitle}>Пошта</span>
-          <input
-            {...register('email', {
-              required: 'Без имейла невозможна ваша регистрация',
-              pattern: {
-                value: /^[\w.-]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,6})+$/,
-                message: 'Имейл должен содержать только латинские буквы и @',
-              },
-            })}
-            type="text"
-            name="email"
-            placeholder="Email"
-            autoComplete="email"
-            className={`${s.input} ${errors.email ? s.invalid : s.valid}`}
-          />
-          <p>{errors.email?.message}</p>
+          <div className={s.inputWrap}>
+            <div className={s.svgWrap}>
+              <IconEmail />
+            </div>
+            <input
+              {...register('email', {
+                required: 'Введіть свою електронну пошту',
+                pattern: {
+                  value: /^[\w.-]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,6})+$/,
+                  message: `Електронна пошта повинна містити:\n 
+                    - лише латинські літери;\n
+                    - символ "@".`,
+                },
+              })}
+              type="text"
+              name="email"
+              placeholder="Email"
+              autoComplete="email"
+              className={`${s.input} ${errors.email ? s.invalid : s.valid}`}
+            />
+          </div>
+          {errors.email && (
+            <FormErrorMessage errorText={errors.email.message} />
+          )}
         </label>
         <label className={s.label}>
           <span className={s.labelTitle}>Пароль</span>
-          <input
-            {...register('password', {
-              required: 'Без пароля невозможна ваша регистрация',
-              pattern: {
-                value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,16}$/,
-                message:
-                  'Пароль должен быть такого вормата: длина от 4 до 16 символов, только латинские буквы и цифры, должна быть хотя бы одна заглавная буква ',
-              },
-            })}
-            type="password"
-            name="password"
-            placeholder="Password"
-            autoComplete="password"
-            className={`${s.input} ${errors.password ? s.invalid : s.valid}`}
-          />
-          <p>{errors.password?.message}</p>
+          <div className={s.inputWrap}>
+            <div className={s.svgWrap}>
+              <IconPassword />
+            </div>
+            <input
+              {...register('password', {
+                required: 'Придумайте пароль',
+                pattern: {
+                  value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,16}$/,
+                  message: `Пароль повинен відповідати такому формату:\n
+        - довжина від 4 до 16 символів;\n
+        - лише латинські літери та цифри;\n
+        - обов'язково має бути хоча б одна велика літера.`,
+                },
+              })}
+              type="password"
+              name="password"
+              placeholder="Password"
+              autoComplete="password"
+              className={`${s.input} ${errors.password ? s.invalid : s.valid}`}
+            />
+          </div>
+          {errors.password && (
+            <FormErrorMessage errorText={errors.password.message} />
+          )}
         </label>
 
         <input

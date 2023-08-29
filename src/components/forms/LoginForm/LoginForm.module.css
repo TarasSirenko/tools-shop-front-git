@@ -1,6 +1,7 @@
 .form {
   margin: 0 auto;
   padding: 40px 100px 100px 50px;
+  max-width: 522px;
 
   background-color: #707070;
   color: #ffffff;
@@ -15,7 +16,7 @@
 }
 
 .title {
-  margin-right: 10px;
+  margin-right: 9px;
 
   font-weight: 300;
   font-size: 20px;
@@ -28,6 +29,18 @@
   color: #ffffff;
   border: none;
   border-radius: 24px;
+  cursor: pointer;
+
+  transition: all 200ms linear;
+}
+
+.registerLink:hover,
+.registerLink:focus,
+.submit:hover,
+.submit:focus {
+  outline: none;
+  background-color: #d17218;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .label {
@@ -45,6 +58,10 @@
   line-height: 1.173;
 }
 
+.inputWrap {
+  position: relative;
+}
+
 .input {
   height: 50px;
   min-width: 300px;
@@ -54,12 +71,21 @@
   border-radius: 4px;
 }
 
+.svgWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+}
+
 .invalid {
-  outline: 1px solid tomato;
+  border: 3px solid red;
 }
 
 /* .valid {
-  outline: 1px solid rgb(71, 255, 148);
+  border: 3px solid green;
 } */
 
 .submit {
@@ -72,4 +98,7 @@
   border-radius: 24px;
   color: #ffffff;
   background-color: #da9022;
+  cursor: pointer;
+
+  transition: all 200ms linear;
 }

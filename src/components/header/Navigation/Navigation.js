@@ -1,6 +1,6 @@
-import HeaderSearchForm from 'components/heder/HeaderSearchForm';
-import ToolType from 'components/heder/ToolType/ToolType';
-import HeaderUserMenu from 'components/heder/HeaderUserMenu';
+import HeaderSearchForm from 'components/header/HeaderSearchForm';
+import ToolType from 'components/header/ToolType/ToolType';
+import HeaderUserMenu from 'components/header/HeaderUserMenu';
 import s from './Navigation.module.css';
 
 function Navigation() {
