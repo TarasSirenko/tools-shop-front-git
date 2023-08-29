@@ -3,14 +3,15 @@ import axios from 'axios';
 
 const BASE_URL = 'https://tools-shop-server.vercel.app';
 
-const setToken = {
-  set(token) {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-  },
-  unset() {
-    axios.defaults.headers.common.Authorization = '';
-  },
-};
+
+// const setToken = {
+//   set(token) {
+//     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+//   },
+//   unset() {
+//     axios.defaults.headers.common.Authorization = '';
+//   },
+// };
 
 const register = createAsyncThunk('auth/register', async credentials => {
   try {

@@ -8,6 +8,16 @@ function App() {
     <ModalProvider>
       <GeneralContainer>
         <AppBar />
+        <h1 className="taras">TARAS</h1>
+        <button
+          type="button"
+          onClick={() => {
+            const taras = document.querySelector('.taras');
+            taras.textContent = 'TARAS PETYSHOK';
+          }}
+        >
+          Нажми меня если не зассал
+        </button>
       </GeneralContainer>
     </ModalProvider>
   );
