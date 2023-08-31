@@ -1,6 +1,6 @@
-import { ReactComponent as IconSearch } from "svgImage/icon-search.svg";
+import { ReactComponent as IconSearch } from 'svgImage/icon-search.svg';
 
-import s from "./HeaderSearchForm.module.css";
+import s from './HeaderSearchForm.module.css';
 
 function HeaderSearchForm() {
   return (
@@ -11,7 +11,7 @@ function HeaderSearchForm() {
       </label>
 
       <button type="button" className={s.button}>
-        Україна
+        Вся Україна
       </button>
       <button type="submit" className={s.submit}>
         Знайти

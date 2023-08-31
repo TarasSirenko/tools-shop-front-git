@@ -1,0 +1,8 @@
+.ToolsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    padding: 20px;
+    justify-content: center;
+
+}

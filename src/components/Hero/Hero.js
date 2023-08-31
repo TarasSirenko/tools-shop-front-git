@@ -17,13 +17,13 @@ function Hero() {
         width={800}
         transitionTime={1000}
       >
-        <div>
+        <div className={s.Slide}>
           <img src={slide2} alt="Slide 1" />
         </div>
-        <div>
+        <div className={s.Slide}>
           <img src={slide2} alt="Slide 1" />
         </div>
-        <div>
+        <div className={s.Slide}>
           <img src={slide2} alt="Slide 1" />
         </div>
       </Carousel>

@@ -1,6 +1,11 @@
 .Container {
     display: flex;
-    justify-content: center;
-            align-items: top;
-            height: 100vh;
+        justify-content: center;
+        align-items: flex-start;
+        height: 375px;
+}
+
+.Slide img {
+    max-height: 100%;
+    width: auto;
 }
