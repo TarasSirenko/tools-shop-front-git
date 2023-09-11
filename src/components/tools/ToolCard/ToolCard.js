@@ -1,6 +1,6 @@
 import s from './ToolCard.module.css';
 
-import toolImg from './09 1.png';
+// import toolImg from './09 1.png';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function ToolCard({ image, name, price, status }) {
@@ -8,7 +8,7 @@ function ToolCard({ image, name, price, status }) {
   return (
     <a href="#" className={s.ToolCardLink}>
       <div className={s.ToolCardTopWrapper}>
-        <div className={s.Status}>Доступний</div>
+        <div className={s.Status}>{status}</div>
         <button className={s.AddToolBtn}>
           <AddCircleIcon
             color="success"
@@ -18,9 +18,9 @@ function ToolCard({ image, name, price, status }) {
         </button>
       </div>
 
-      <img className={s.ToolCardImage} src={toolImg} alt="tool imag"></img>
+      <img className={s.ToolCardImage} src={image} alt="tool imag"></img>
 
-      <h3 className={s.ToolName}>Циркулярна пила</h3>
+      <h3 className={s.ToolName}>{name}</h3>
       <p className={s.Price}>
         <span className={s.PriceTitle}>Ціна:</span> {price}грн/день
       </p>
