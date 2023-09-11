@@ -1,9 +1,8 @@
 {
   "files": {
     "main.css": "/tools-shop-front-git/static/css/main.6cf5b98d.css",
-    "main.js": "/tools-shop-front-git/static/js/main.c553276a.js",
+    "main.js": "/tools-shop-front-git/static/js/main.b279f182.js",
     "static/media/b9c64a23.png": "/tools-shop-front-git/static/media/b9c64a23.c98158bbe49e73a29737.png",
-    "static/media/09 1.png": "/tools-shop-front-git/static/media/09 1.0087450a185b77a59ec1.png",
     "index.html": "/tools-shop-front-git/index.html",
     "static/media/mail.svg": "/tools-shop-front-git/static/media/mail.ca038e670b90d8d03631d9cf8e7f17ee.svg",
     "static/media/icon-cart.svg": "/tools-shop-front-git/static/media/icon-cart.a6d1f4849d5d8937b33781dad27c38c7.svg",
@@ -12,10 +11,10 @@
     "static/media/lock.svg": "/tools-shop-front-git/static/media/lock.08be67da329c1b69a50c34a0a5faccbb.svg",
     "static/media/phone.svg": "/tools-shop-front-git/static/media/phone.a7bf6d8536230b77bf2598213f685259.svg",
     "main.6cf5b98d.css.map": "/tools-shop-front-git/static/css/main.6cf5b98d.css.map",
-    "main.c553276a.js.map": "/tools-shop-front-git/static/js/main.c553276a.js.map"
+    "main.b279f182.js.map": "/tools-shop-front-git/static/js/main.b279f182.js.map"
   },
   "entrypoints": [
     "static/css/main.6cf5b98d.css",
-    "static/js/main.c553276a.js"
+    "static/js/main.b279f182.js"
   ]
 }
