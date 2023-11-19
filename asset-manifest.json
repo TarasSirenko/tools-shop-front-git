@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/tools-shop-front-git/static/css/main.b3c13462.css",
-    "main.js": "/tools-shop-front-git/static/js/main.e255d5e3.js",
+    "main.css": "/tools-shop-front-git/static/css/main.03c0506a.css",
+    "main.js": "/tools-shop-front-git/static/js/main.4c09cfff.js",
     "static/media/b9c64a23.png": "/tools-shop-front-git/static/media/b9c64a23.c98158bbe49e73a29737.png",
     "static/media/icon-cross.svg": "/tools-shop-front-git/static/media/icon-cross.bd8c7d2eee8aa250bfc23fc6f9023b95.svg",
     "index.html": "/tools-shop-front-git/index.html",
@@ -11,11 +11,11 @@
     "static/media/icon-user.svg": "/tools-shop-front-git/static/media/icon-user.e34935a34ce8852eb03ad76052037d98.svg",
     "static/media/lock.svg": "/tools-shop-front-git/static/media/lock.08be67da329c1b69a50c34a0a5faccbb.svg",
     "static/media/phone.svg": "/tools-shop-front-git/static/media/phone.a7bf6d8536230b77bf2598213f685259.svg",
-    "main.b3c13462.css.map": "/tools-shop-front-git/static/css/main.b3c13462.css.map",
-    "main.e255d5e3.js.map": "/tools-shop-front-git/static/js/main.e255d5e3.js.map"
+    "main.03c0506a.css.map": "/tools-shop-front-git/static/css/main.03c0506a.css.map",
+    "main.4c09cfff.js.map": "/tools-shop-front-git/static/js/main.4c09cfff.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3c13462.css",
-    "static/js/main.e255d5e3.js"
+    "static/css/main.03c0506a.css",
+    "static/js/main.4c09cfff.js"
   ]
 }
