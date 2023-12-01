@@ -1,0 +1,36 @@
+.form {
+    margin: 0 auto;
+    padding: 50px 40px 50px 40px;
+
+
+
+    background-color: #707070;
+    color: #ffffff;
+    border: 10px solid #da9022;
+    border-radius: 10px;
+}
+.usedEmailWrapper {
+    text-align: center;
+}
+.submit {
+    padding: 5px 25px 7px 25px;
+
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.173;
+    border: none;
+    border-radius: 24px;
+    color: #ffffff;
+    background-color: #da9022;
+    cursor: pointer;
+
+    transition: all 200ms linear;
+}
+
+.submit .button {
+    margin-right: 100px;
+}
+
+.usedEmailTitle {
+    margin-bottom: 40px;
+}

@@ -1,30 +1,54 @@
 import s from './ToolCard.module.css';
 
-// import toolImg from './09 1.png';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { ReactComponent as IconCart } from 'svgImage/icon-cart.svg';
+import { toast } from 'react-toastify';
 
-function ToolCard({ image, name, price, status }) {
-  console.log(price);
+import { addToCart } from 'redux/cart/cart-slice';
+
+function ToolCard({ toolId, image, name, price, status, catr }) {
+  const dispatch = useDispatch();
+  const currentCart = useSelector(state => state.cart);
+
+  const handleAddToCartClick = event => {
+    event.preventDefault();
+    if (currentCart.find(tool => tool.toolId === toolId)) {
+      toast.warning('Інструмент вже в кошику', {
+        className: `${s.customToast}`,
+      });
+      return;
+    }
+
+    toast.success('Інструмент додано у кошик', {
+      className: `${s.customToast}`,
+    });
+
+    dispatch(addToCart({ toolId, image, name, price, status }));
+  };
   return (
-    <a href="#" className={s.ToolCardLink}>
-      <div className={s.ToolCardTopWrapper}>
-        <div className={s.Status}>{status}</div>
-        <button className={s.AddToolBtn}>
-          <AddCircleIcon
-            color="success"
-            fontSize="large"
-            titleAccess="Додати інструмент у кошик"
-          />
-        </button>
-      </div>
+    <>
+      <li>
+        <Link to={toolId} className={s.ToolCardLink}>
+          <div className={s.ToolCardTopWrapper}>
+            <div className={s.Status}>{status}</div>
+            <button
+              className={`${s.AddToolBtn} ${catr ? s.active : ''}`}
+              onClick={handleAddToCartClick}
+            >
+              <IconCart width={27} height={30} />
+            </button>
+          </div>
 
-      <img className={s.ToolCardImage} src={image} alt="tool imag"></img>
+          <img className={s.ToolCardImage} src={image} alt="tool imag"></img>
 
-      <h3 className={s.ToolName}>{name}</h3>
-      <p className={s.Price}>
-        <span className={s.PriceTitle}>Ціна:</span> {price}грн/день
-      </p>
-    </a>
+          <h3 className={s.ToolName}>{name}</h3>
+          <p className={s.Price}>
+            <span className={s.PriceTitle}>Ціна:</span> {price}грн/день
+          </p>
+        </Link>
+      </li>
+    </>
   );
 }
 

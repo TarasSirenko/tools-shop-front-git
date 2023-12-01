@@ -35,7 +35,7 @@
   cursor: pointer;
 }
 
-.button {
+/* .button {
   display: flex;
   align-items: center;
 
@@ -48,7 +48,7 @@
   border-left: 2px solid #da9022;
   border-right: 2px solid #da9022;
   color: #707070;
-}
+} */
 
 .submit {
   display: flex;

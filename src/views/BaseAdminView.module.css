@@ -1,0 +1,197 @@
+.wrapper1 {
+    width: 600px;
+    height: 300px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+   
+    position: absolute;
+    left: -1600px;
+    /* начальное положение за пределами видимости слева */
+    animation: slideLeft 1.5s ease-out forwards;
+    /* имя анимации, продолжительность и функция времени */
+    font-size: 40px;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    /* чтобы скрыть часть контейнера в начальном положении */
+}
+
+@keyframes slideLeft {
+    0% {
+        left: -1600px;
+        /* начальная позиция слева за пределами видимости */
+    }
+
+    100% {
+        left: -40px;
+        /* конечная позиция, контейнер выезжает в видимую область */
+    }
+}
+
+.wrapper2 {
+    width: 500px;
+    height: 200px;
+    background-color: #da9022;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    right:  -1600px;
+    top: 300px;
+    /* начальное положение за пределами видимости слева */
+    animation: slideRight 1.5s ease-out forwards;
+    /* имя анимации, продолжительность и функция времени */
+    font-size: 40px;
+}
+/* #da9022; */
+/* #f79400 */
+.container {
+    position: relative;
+    overflow: hidden;
+    /* чтобы скрыть часть контейнера в начальном положении */
+}
+
+@keyframes slideRight {
+    0% {
+        right: -1600px;
+        /* начальная позиция слева за пределами видимости */
+    }
+
+    100% {
+        right: -40px;
+        /* конечная позиция, контейнер выезжает в видимую область */
+    }
+}
+
+
+.wrapper3 {
+    width: 700px;
+    height: 300px;
+    background-image: url('../img/instrument-dm.jpg');
+    background-size: cover;
+        /* изображение будет вписано в контейнер */
+        background-position: center;
+        /* центрируем изображение */
+        background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+right: -1600px;
+    position: absolute;
+    /* начальное положение за пределами видимости слева */
+    animation: slideRightImg 1.5s ease-out forwards;
+    animation-delay: 1s;
+    /* имя анимации, продолжительность и функция времени */
+    font-size: 40px;
+}
+
+/* #da9022; */
+/* #f79400 */
+.container {
+    position: relative;
+    overflow: hidden;
+    /* чтобы скрыть часть контейнера в начальном положении */
+}
+
+@keyframes slideRightImg {
+    0% {
+        right: -1600px;
+        /* начальная позиция слева за пределами видимости */
+    }
+
+    100% {
+        right: -40px;
+        /* конечная позиция, контейнер выезжает в видимую область */
+    }
+}
+
+
+.wrapper4 {
+    width: 1280px;
+    height: 350px;
+    background-image: url('../img/tool_dm_man.png');
+    background-size: cover;
+    /* изображение будет вписано в контейнер */
+    background-position: center;
+    /* центрируем изображение */
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    bottom: -1600px;
+    right: -40px;
+    position: absolute;
+    /* начальное положение за пределами видимости слева */
+    animation: slideBtmImg 1.5s ease-out forwards;
+    animation-delay: 1s;
+    /* имя анимации, продолжительность и функция времени */
+    font-size: 40px;
+}
+
+/* #da9022; */
+/* #f79400 */
+.container {
+    position: relative;
+    overflow: hidden;
+    /* чтобы скрыть часть контейнера в начальном положении */
+}
+
+@keyframes slideBtmImg {
+    0% {
+        bottom: -1600px;
+        /* начальная позиция слева за пределами видимости */
+    }
+
+    100% {
+        bottom: -850px;
+        /* конечная позиция, контейнер выезжает в видимую область */
+    }
+}
+
+
+.wrapper5 {
+    width: 800px;
+    height: 200px;
+    background-color: rgb(48, 48, 48);
+    color: #f79400;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    left: -1600px;
+    top: 300px;
+    /* начальное положение за пределами видимости слева */
+    animation: hero 1.5s ease-out forwards;
+    /* имя анимации, продолжительность и функция времени */
+    animation-delay: 1s;
+    font-size: 50px;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    /* чтобы скрыть часть контейнера в начальном положении */
+}
+
+@keyframes hero {
+    0% {
+        left: -1600px;
+        /* начальная позиция слева за пределами видимости */
+    }
+
+    100% {
+        left: -40px;
+        /* конечная позиция, контейнер выезжает в видимую область */
+    }
+}

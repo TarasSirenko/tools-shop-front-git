@@ -1,13 +1,16 @@
 .form {
   margin: 0 auto;
-  padding: 40px 100px 100px 50px;
-  width: 522px;
+padding: 50px 40px 50px 40px;
+
+  
 
   background-color: #707070;
   color: #ffffff;
   border: 10px solid #da9022;
   border-radius: 10px;
 }
+
+
 
 .title {
   margin-bottom: 30px;
@@ -74,9 +77,18 @@
   transition: all 200ms linear;
 }
 
+
+
 .submit:hover,
 .submit:focus {
   outline: none;
   background-color: #d17218;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.registrationMenuContainer {
+  min-width: 400px;
+  padding: 40px;
+  background-color: #ffffff;
 }

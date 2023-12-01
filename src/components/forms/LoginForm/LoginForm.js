@@ -1,21 +1,64 @@
-import { NavLink } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { useEffect, useState } from 'react';
+import { Oval } from 'react-loader-spinner';
+import { useNavigate } from 'react-router-dom';
+
+import { useModalContext } from '../../../context/ModalContext';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 import IconPassword from 'svgImage/IconPassword';
 import IconEmail from 'svgImage/IconEmail';
+
 import FormErrorMessage from '../FormErrorMessage';
+import UserInfoForms from '../UserInfoForms/UserInfoForms';
+import RegisterForm from '../RegisterForm/RegisterForm';
+import SetShoePasswordBtn from 'components/utils/SetShoePasswordBtn/SetShoePasswordBtn';
+
 import s from './LoginForm.module.css';
 import 'animate.css';
+import { useLoginUserMutation, useChangePasswordMutation } from 'redux/api/api';
+import { updateCurrentUser, addCurrentUser } from 'redux/auth/auth-slice';
+import { updateToken } from 'redux/auth/token-slice';
 
 export default function LoginForm() {
+  const { closeModal, setModalContent } = useModalContext();
+  const [showPassword, setShowPassword] = useState(false);
+  const [currentResponse, setCurrentResponse] = useState(null);
+  const [emailValue, setEmailValue] = useState('');
+  const handleEmailChange = event => {
+    setEmailValue(event.target.value);
+  };
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
+    clearErrors,
     reset,
   } = useForm();
+  const currentUser = useSelector(state => state.auth);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [loginUser, { isLoading, isError, isSuccess }] = useLoginUserMutation();
+
+  const [
+    changePassword,
+    { isLoading: isLoadingCP, isError: isErrorCP, isSuccess: isSuccessCP },
+  ] = useChangePasswordMutation();
+
+  const setPassword = async () => {
+    clearErrors('email', 'password');
+    dispatch(addCurrentUser({ data: { email: emailValue } }));
+    const response = await changePassword(emailValue);
+    setCurrentResponse(response);
+    console.log(isSuccessCP);
+  };
 
   const handleClick = errors => {
     if (errors.name)
@@ -28,10 +71,73 @@ export default function LoginForm() {
         position: toast.POSITION.TOP_RIGHT,
       });
   };
-  const onSubmit = data => {
-    console.log(data);
-    reset();
+  const onSubmit = async data => {
+    clearErrors('password', 'email');
+    const response = await loginUser(data);
+    setCurrentResponse(response);
+    if (response?.data) {
+      dispatch(updateCurrentUser(response.data));
+      dispatch(updateToken(response.data.token));
+    }
+    // reset();
   };
+  useEffect(() => {
+    if (currentUser.isLoggedIn) {
+      setModalContent(<UserInfoForms user={currentUser.user} />);
+    }
+  }, [currentUser.isLoggedIn, currentUser.user, setModalContent]);
+  useEffect(() => {
+    if (isSuccessCP) {
+      closeModal();
+      navigate(`/setPassword`);
+    }
+    if (currentResponse && (isError || isErrorCP)) {
+      if (currentResponse?.error?.status === 400) {
+        setError('password', {
+          type: 'manual',
+          message: 'Неправильний пароль',
+        });
+      }
+      if (currentResponse?.error?.status === 404) {
+        setError('email', {
+          type: 'manual',
+          message: 'Немає користувача з таким імейлом',
+        });
+      }
+      if (currentResponse?.error?.status === 403) {
+        dispatch(addCurrentUser({ data: { email: emailValue } }));
+        closeModal();
+        navigate(`/registration`);
+      }
+
+      setCurrentResponse(null);
+    }
+  }, [
+    isError,
+    setError,
+    currentResponse,
+    closeModal,
+    navigate,
+    isErrorCP,
+    dispatch,
+    emailValue,
+    isSuccessCP,
+  ]);
+  if (isLoading || isLoadingCP) {
+    return (
+      <Oval
+        height={200}
+        width={200}
+        color="#da9022"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        secondaryColor="#b7b7b7"
+        strokeWidth={2}
+        strokeWidthSecondary={2}
+      />
+    );
+  }
 
   return (
     <>
@@ -40,11 +146,13 @@ export default function LoginForm() {
         <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
           <div className={s.formTitleWrap}>
             <h1 className={s.title}>Увійдіть або виконайте</h1>
-            <NavLink to="/register">
-              <button type="button" className={s.registerLink}>
-                Реєстрацію
-              </button>
-            </NavLink>
+            <button
+              type="button"
+              className={s.registerLink}
+              onClick={() => setModalContent(<RegisterForm />)}
+            >
+              Реєстрацію
+            </button>
           </div>
           <label className={s.label}>
             <span className={s.labelTitle}>Пошта</span>
@@ -68,6 +176,7 @@ export default function LoginForm() {
                 placeholder="Email"
                 autoComplete="email"
                 className={`${s.input} ${errors.email ? s.invalid : s.valid}`}
+                onChange={handleEmailChange}
               />
             </div>
 
@@ -89,11 +198,10 @@ export default function LoginForm() {
                     value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,16}$/,
                     message: `Пароль повинен відповідати такому формату:\n
         - довжина від 4 до 16 символів;\n
-        - лише латинські літери та цифри;\n
-        - обов'язково має бути хоча б одна велика літера.`,
+        - лише латинські літери та цифри;`,
                   },
                 })}
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 name="password"
                 placeholder="Password"
                 autoComplete="password"
@@ -101,19 +209,31 @@ export default function LoginForm() {
                   errors.password ? s.invalid : s.valid
                 }`}
               />
+              <SetShoePasswordBtn
+                setShowPassword={setShowPassword}
+                showPassword={showPassword}
+              />
             </div>
 
             {errors.password && (
               <FormErrorMessage errorText={errors.password.message} />
             )}
           </label>
-
-          <input
-            className={s.submit}
-            type="submit"
-            value="Вхід"
-            onClick={() => handleClick(errors)}
-          />
+          <div className={s.loginUpdatePasswordWrapper}>
+            <input
+              className={s.submit}
+              type="submit"
+              value="Вхід"
+              onClick={() => handleClick(errors)}
+            />
+            <button
+              type="button"
+              onClick={() => setPassword()}
+              className={`${s.button} ${s.updateedPasswordBtn}`}
+            >
+              Забули пароль?
+            </button>
+          </div>
         </form>
       </div>
     </>

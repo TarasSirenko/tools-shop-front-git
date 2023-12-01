@@ -5,6 +5,7 @@
 .buttonUser,
 .buttonCart {
   height: 30px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,18 +13,31 @@
   border: none;
   background-color: transparent;
   fill: #ffffff;
+  color: #ffffff;
   cursor: pointer;
 
-  transition: fill 200ms linear;
-}
-
-.navLink {
+  transition: fill 200ms linear, color 200ms linear;
   margin-left: 50px;
 }
+
+
+
 
 .buttonUser:hover,
 .buttonCart:hover,
 .buttonUser:focus,
 .buttonCart:focus {
   fill: #da9022;
+  color: #da9022;
+}
+
+.buttonUser {
+  position: relative;
+}
+
+.email {
+  font-size: 10px;
+ 
+  position: absolute;
+  bottom: -12px;
 }

@@ -1,43 +1,74 @@
 import s from './ToolsContainer.module.css';
 
-// import toolImg from './09 1.png';
 import ToolCard from '../ToolCard/ToolCard';
-import axios from 'axios';
-import { useQuery } from 'react-query';
+import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
+import Loader from 'components/utils/Loader/Loader';
+
+import { useGetToolsQuery } from 'redux/api/api';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateTools, addToolsForCurrentRequest } from 'redux/tools/toolsSlice';
+import { updateToolsFilter } from 'redux/tools/toolsFilterSlice';
+import { useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 function ToolsContainer() {
-  async function fetchTools() {
-    const response = await axios.get(
-      'https://tools-shop-server.vercel.app/api/tools/',
-    );
+  const params = useSelector(state => state.filter.value);
+  const currentTools = useSelector(state => state.tools.value);
+  const toolsCart = useSelector(state => state.cart);
 
-    console.log(response.data);
-    return response.data;
-  }
-  const { data, isLoading, isError } = useQuery('tools', fetchTools);
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(updateToolsFilter({ page: 1 }));
+    dispatch(updateTools([]));
+  }, [dispatch]);
+
+  const { data, isLoading, isError } = useGetToolsQuery(params);
+
+  useEffect(() => {
+    if (!data) return;
+    if (params.page !== parseInt(data.currentPage)) return;
+
+    if (params.page === 1) dispatch(updateTools(data.data));
+    if (data.currentPage > 1) dispatch(addToolsForCurrentRequest(data.data));
+  }, [data, dispatch, params.page]);
 
   if (isError) {
-    return <div>Error fetching data</div>;
+    return (
+      <div className={s.Error}>
+        Вибачте, немає інструментів за вашим запитом
+      </div>
+    );
+  }
+  if (isLoading || currentTools.length === 0) {
+    return <Loader />;
   }
 
-  return (
-    <div className={s.ToolsContainer}>
-      {data.map(({ _id, toolPicture, name, price, status }) => {
-        return (
-          <ToolCard
-            key={_id}
-            image={toolPicture}
-            name={name}
-            price={price}
-            status={status}
-          />
-        );
-      })}
-    </div>
-  );
+  if (currentTools.length !== 0) {
+    const cart = toolsCart.map(({ toolId }) => toolId);
+    return (
+      <>
+        <ul className={s.ToolsContainer}>
+          <ToastContainer className={s.ToastContainer} />
+          {currentTools.map(({ _id, toolPicture, name, price, status }) => {
+            const inTheCart = cart.includes(_id);
+            return (
+              <ToolCard
+                key={_id}
+                toolId={_id}
+                image={toolPicture}
+                name={name}
+                price={price}
+                status={status}
+                catr={inTheCart}
+              />
+            );
+          })}
+        </ul>
+        {data.data.length > 23 && <LoadMoreBtn />}
+      </>
+    );
+  }
 }
 
 export default ToolsContainer;

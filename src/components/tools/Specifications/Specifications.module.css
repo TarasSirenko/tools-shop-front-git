@@ -1,0 +1,35 @@
+/* .specificationsWrapper {
+    margin-right: 10px;
+} */
+
+.specificationsTitle {
+   margin-bottom: 20px;
+   text-align: center;
+}
+
+.specificationsTable {
+    width: 500px;
+    border-collapse: collapse;
+}
+
+.specificationsRow:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+.specificationsLabel {
+    font-size: 14px;
+    /* Размер шрифта для названия характеристики */
+    font-weight: 500;
+    /* Жирное начертание для названия характеристики */
+    padding: 5px;
+    /* Отступ для названия характеристики */
+    text-align: center;
+    /* Выравнивание названия по правому краю */
+}
+
+.specificationsValue {
+    font-size: 16px;
+    /* Размер шрифта для значения характеристики (на 2 пикселя больше) */
+    padding: 5px;
+    /* Отступ для значения характеристики */
+}

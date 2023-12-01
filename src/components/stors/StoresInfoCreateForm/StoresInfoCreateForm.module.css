@@ -1,0 +1,20 @@
+.storeForm {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.locationTitle {
+   width: 100%;
+ padding-left: 40px;
+   margin-bottom: 10px;
+   border-bottom: 2px solid black;
+}
+
+.locationForm {
+    display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        border-bottom: 2px solid black;
+        padding-bottom: 10px;
+}

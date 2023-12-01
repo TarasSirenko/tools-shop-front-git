@@ -1,0 +1,66 @@
+.info {
+    position: relative;
+    border: 1px solid rgb(169, 169, 169);
+    padding: 20px;
+    width: 350px;
+    margin-bottom: 60px;
+}
+
+.addButtonWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+.toolName {
+    padding-left: 20px;
+}
+
+.button {
+    color: white;
+    display: inline-block;
+    background-color: #da9022;
+    padding: 7px 15px;
+    border-radius: 15px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+
+
+.addButton {
+    font-size: 20px;
+    width: 150px;
+}
+
+.addButton:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+.price {
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.descriptionList {
+    margin-bottom: 20px;
+}
+.customToast {
+    font-size: 24px;
+    width: 400px;
+    top: -24px;
+    right: 300px;
+}
+.ToastContainer {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+ top: 0px;
+ right: 0px;
+}

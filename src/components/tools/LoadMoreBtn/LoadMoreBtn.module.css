@@ -1,0 +1,18 @@
+
+
+
+
+.LoadMoreBtn {
+    display: block;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    padding: 5px 10px;
+   margin: 0px auto 40px auto;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.172;
+    background-color: #da9022;
+    color: #ffffff;
+}

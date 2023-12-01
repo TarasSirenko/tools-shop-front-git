@@ -1,8 +1,25 @@
 .ToolsContainer {
+
     display: flex;
     flex-wrap: wrap;
     max-width: 1600px;
     padding: 20px;
     justify-content: center;
 
+}
+
+
+
+.Error {
+    display: block;
+    padding: 50px;
+    text-align: center;
+}
+
+.ToastContainer {
+    width: 20px;
+    height: 20px;
+   
+    top: 20px;
+    right: 240px;
 }

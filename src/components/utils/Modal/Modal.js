@@ -1,7 +1,8 @@
 import s from './Modal.module.css';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
+import { ToastContainer } from 'react-toastify';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -17,8 +18,7 @@ export default function Modal({ closeModal, modalContent }) {
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
-    //  eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [closeModal]);
 
   const handleOverlayClick = e => {
     if (e.target === e.currentTarget) {
@@ -28,6 +28,7 @@ export default function Modal({ closeModal, modalContent }) {
 
   return createPortal(
     <div className={s.Overlay} onClick={handleOverlayClick}>
+      <ToastContainer className={s.ToastContainer} />
       <div className={s.Modal}>{modalContent}</div>
     </div>,
     modalRoot,

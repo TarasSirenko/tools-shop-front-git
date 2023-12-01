@@ -1,0 +1,21 @@
+.AdminNavigationList {
+    display: flex;
+}
+
+.AdminNavigationLink {
+    text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+padding: 15px 40px;
+display: block;
+transition: background-color 500ms linear, color 250ms linear;
+}
+.AdminNavigationLink:hover {
+    color: #f79400;
+    background-color: rgb(58, 58, 58);
+}
+.navigation {
+    display: flex;
+    align-items: center;
+}

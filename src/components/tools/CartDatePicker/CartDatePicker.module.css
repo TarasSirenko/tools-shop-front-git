@@ -1,0 +1,28 @@
+.bookingDatesList {
+    display: flex;
+    padding: 2px 10px;
+}
+
+.bookingDatesItem {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.bookingDatesItem:first-child {
+    margin-right: 20px;
+}
+
+
+.calendarLable {
+    position: absolute;
+    top: -20px
+}
+
+
+.customToast {
+    font-size: 24px;
+    width: 400px;
+    top: 50px;
+    right: 180px;
+}

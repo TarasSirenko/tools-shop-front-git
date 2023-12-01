@@ -1,0 +1,54 @@
+
+.SearchForm {
+    padding: 20px;
+}
+
+.SelectCity {
+    height: 36px;
+    font-weight: 600;
+}
+
+.SearchInput {
+    width: 200px;
+        height: 36px;
+        border: 0px ;
+            outline: none;
+    font-weight: 600;
+    padding-left: 30px;
+
+}
+
+.SearchLable {
+position: relative;
+}
+
+.iconSearch {
+    position: absolute;
+    width: 32px;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+}
+
+
+
+
+.SearchForm {
+    border: 1px solid black;
+    display: inline-block;
+  
+   padding: 5px;
+   background-color: rgb(72, 72, 72);
+}
+
+.formWrapper {
+    margin-top: 20px;
+    text-align: center;
+  
+}
+
+/* 
+  background-color: rgb(72, 72, 72);
+  border-bottom: 2px solid #da9022; */
+/* color: #f79400; */
+/*  rgb(58, 58, 58); */

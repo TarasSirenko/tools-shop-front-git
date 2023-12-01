@@ -1,18 +1,36 @@
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import { Oval } from 'react-loader-spinner';
+import { useModalContext } from '../../../context/ModalContext';
+
+import { addCurrentUser } from 'redux/auth/auth-slice';
+import { useSignupUserMutation } from 'redux/api/api';
 
 import IconPassword from 'svgImage/IconPassword';
 import IconEmail from 'svgImage/IconEmail';
 import IconPhone from 'svgImage/IconPhone';
 import FormErrorMessage from '../FormErrorMessage';
+import ErrorRegisterForm from '../ErrorRegisterForm/ErrorRegisterForm';
+import SetShoePasswordBtn from 'components/utils/SetShoePasswordBtn/SetShoePasswordBtn';
 
-import authOperations from 'redux/auth/auth-operation';
 import s from './RegisterForm.module.css';
 
 export default function RegisterForm() {
   const dispatch = useDispatch();
+  const [errorStatus, setErrorStatus] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const [signupUser, { isLoading, isError, isSuccess }] =
+    useSignupUserMutation();
+
+  const navigate = useNavigate();
+
+  const { closeModal, setModalContent } = useModalContext();
+
   const {
     register,
     handleSubmit,
@@ -20,30 +38,45 @@ export default function RegisterForm() {
     reset,
   } = useForm();
 
-  const handleClick = errors => {
-    if (errors.name)
-      toast.error(errors.name.message, {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-
-    if (errors.email)
-      toast.error(errors.email.message, {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-
-    if (errors.password)
-      toast.error(errors.password.message, {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-  };
-  const onSubmit = data => {
-    dispatch(authOperations.register(data));
+  const onSubmit = async data => {
+    const response = await signupUser(data);
+    if (response?.data) dispatch(addCurrentUser(response));
+    if (response?.error) setErrorStatus(response.error.status);
     reset();
   };
+  useEffect(() => {
+    if (isError) {
+      if (!errorStatus) return;
+
+      setModalContent(<ErrorRegisterForm errorStatus={errorStatus} />);
+    }
+  }, [errorStatus, isError, setModalContent]);
+
+  useEffect(() => {
+    if (isSuccess) {
+      closeModal();
+      navigate(`/registration`);
+    }
+  }, [closeModal, isSuccess, navigate]);
+
+  if (isLoading) {
+    return (
+      <Oval
+        height={200}
+        width={200}
+        color="#da9022"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        secondaryColor="#b7b7b7"
+        strokeWidth={2}
+        strokeWidthSecondary={2}
+      />
+    );
+  }
 
   return (
     <>
-      <ToastContainer />
       <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
         <h1 className={s.title}>Сторінка рєєстрації</h1>
 
@@ -119,11 +152,15 @@ export default function RegisterForm() {
         - обов'язково має бути хоча б одна велика літера.`,
                 },
               })}
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               name="password"
               placeholder="Password"
               autoComplete="password"
               className={`${s.input} ${errors.password ? s.invalid : s.valid}`}
+            />
+            <SetShoePasswordBtn
+              setShowPassword={setShowPassword}
+              showPassword={showPassword}
             />
           </div>
           {errors.password && (
@@ -131,12 +168,7 @@ export default function RegisterForm() {
           )}
         </label>
 
-        <input
-          className={s.submit}
-          type="submit"
-          value="Зареєструватися"
-          onClick={() => handleClick(errors)}
-        />
+        <input className={s.submit} type="submit" value="Зареєструватися" />
       </form>
     </>
   );

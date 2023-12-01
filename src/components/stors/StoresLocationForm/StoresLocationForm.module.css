@@ -1,0 +1,20 @@
+.autocompleteWrapper {
+    width: 268px;
+    padding: 5px 15px;
+}
+
+.autocompletelastChild {
+    margin-right: 15px;
+}
+
+.customInput {
+    width: 238px;  
+}
+
+.houseApartmentWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+

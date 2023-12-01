@@ -1,17 +1,24 @@
-import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 
-import './style.css';
+import { useDispatch } from 'react-redux';
+import { updateToolsFilter } from 'redux/tools/toolsFilterSlice';
+import { useState } from 'react';
+import { updateTools } from 'redux/tools/toolsSlice';
 
 export default function SelectSmall() {
-  const [age, setAge] = React.useState('');
+  const [toolType, setToolType] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleChange = event => {
-    setAge(event.target.value);
+    setToolType(event.target.value);
+    dispatch(updateTools([]));
+    const queryParams = { type: event.target.value, page: 1 };
+    dispatch(updateToolsFilter(queryParams));
   };
 
   const selectStyles = {
@@ -51,7 +58,7 @@ export default function SelectSmall() {
       <InputLabel
         id="demo-select-small-label"
         sx={{
-          background: '#707070',
+          background: 'rgb(72, 72, 72);;',
           paddingRight: 1,
           color: 'white', // Цвет текста
           '&:hover': {
@@ -67,8 +74,8 @@ export default function SelectSmall() {
       <Select
         labelId="demo-select-small-label"
         id="demo-select-small"
-        value={age}
-        label="Age"
+        value={toolType}
+        label="Tool type"
         onChange={handleChange}
         IconComponent={DehazeIcon}
         className="select"
@@ -77,9 +84,9 @@ export default function SelectSmall() {
         <MenuItem value="">
           <em>Усі види</em>
         </MenuItem>
-        <MenuItem value={10}>Електро інструмент</MenuItem>
-        <MenuItem value={20}>Ручний інструмент</MenuItem>
-        <MenuItem value={30}>Бензо інструмент</MenuItem>
+        <MenuItem value={'power tool'}>Електро інструмент</MenuItem>
+        <MenuItem value={'hand tool'}>Ручний інструмент</MenuItem>
+        <MenuItem value={'Gasoline-powered tools'}>Бензо інструмент</MenuItem>
       </Select>
     </FormControl>
   );

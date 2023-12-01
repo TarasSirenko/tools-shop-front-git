@@ -1,7 +1,7 @@
 .form {
   margin: 0 auto;
-  padding: 40px 100px 100px 50px;
-  max-width: 522px;
+  padding: 50px 40px 50px 40px;
+
 
   background-color: #707070;
   color: #ffffff;
@@ -64,7 +64,7 @@
 
 .input {
   height: 50px;
-  min-width: 300px;
+  min-width: 100%;
   padding-left: 45px;
 
   border: 3px solid #da9022;
@@ -91,6 +91,7 @@
 .submit {
   padding: 5px 37px;
 
+
   font-weight: 300;
   font-size: 20px;
   line-height: 1.173;
@@ -101,4 +102,28 @@
   cursor: pointer;
 
   transition: all 200ms linear;
+}
+
+
+.button {
+  padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  
+
+}
+
+
+
+.loginUpdatePasswordWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.updateedPasswordBtn {
+  padding: 0 10px;
 }

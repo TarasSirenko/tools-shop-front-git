@@ -1,0 +1,55 @@
+.Container {
+    position: relative;
+    padding: 20px 45px;
+    margin: 20px auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-left: 5px solid rgb(244, 169, 39);
+    border-right: 5px solid rgb(244, 169, 39);
+   background-color: white;
+}
+
+
+
+.toolPicture {
+    display: block;
+    width: 400px;
+   
+}
+.toolName {
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+.button {
+    color: white;
+    display: inline-block;
+    background-color: #da9022;
+    padding: 7px 15px;
+    border-radius: 15px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+    .statusBtn {
+cursor:default
+    }

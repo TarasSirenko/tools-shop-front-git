@@ -1,0 +1,46 @@
+.storesCreateOverlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 67px;
+    left: 0;
+    background-color: rgba(117, 117, 117, 0);
+    opacity: 0;
+    transition: background-color 500ms, opacity 500ms;
+}
+
+.storesCreateOverlay.active {
+    background-color: rgba(117, 117, 117, 0.8);
+    opacity: 1;
+}
+
+.storesCreateContainer {
+    position: absolute;
+    left: 100px;
+    width: 600px;
+    height: 100%;
+    background-color: rgb(200, 200, 200);
+    border-right: 4px solid #da9022;
+    animation: createContainer 500ms ease-out forwards;
+    padding: 30px;
+
+}
+
+ @keyframes createContainer {
+     0% {
+         left: -1600px;
+     }
+
+     100% {
+         left: 0px
+     }
+
+
+ }
+
+.wrapper {
+    position: absolute;
+    width: 500px;
+    height: 100%;
+    left: 0px;
+}

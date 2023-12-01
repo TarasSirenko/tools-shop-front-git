@@ -1,0 +1,29 @@
+.DateContainar {
+    position: relative;
+    text-align: center;
+    width: 350px;
+}
+
+
+.button {
+    color: white;
+    display: inline-block;
+    background-color: #da9022;
+    padding: 7px 15px;
+    border-radius: 15px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.openCalendar {
+    margin-bottom: 10px;
+
+}
+
+.openCalendar:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}

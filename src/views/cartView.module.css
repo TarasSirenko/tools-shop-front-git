@@ -1,0 +1,128 @@
+.ToolsContainer {
+   
+    max-width: 1600px;
+    padding: 20px;
+  
+   
+}
+.ToolsList {
+    display: flex;
+        flex-wrap: wrap;
+background-color: white;
+}
+
+
+
+.cartTool {
+    width: 100%;
+    padding: 5px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    border-bottom: 1px solid #707070;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.cartToolPicture {
+    height: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.toolName {
+    width: 150px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.toolPrice {
+    font-weight: 500;
+    width: 80px;
+}
+
+.removeToolCartBtn {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    width: 24px;
+    fill: #707070;
+    transition: fill 200ms linear;
+}
+.removeToolCartBtn:hover, .removeToolCartBtn:focus {
+fill:#da9022
+}
+
+.cartPlaceholder {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+.createOrderWraper {
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #707070;
+    width: 400px;
+    margin-left: auto;
+    margin-right: 90px;
+    margin-top: 20px;
+    border-radius: 5px;
+
+}
+
+.generalTotalPrice {
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 30px;
+    font-weight: 700;
+        font-size: 24px;
+        line-height: 1.172;
+       
+        color: #ffffff;
+}
+
+.button {
+   
+    border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 20px 40px;
+    border-radius: 5px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.172;
+        background-color: #da9022;
+        color: #ffffff;
+        transition: box-shadow background-color 0.3s, transform 0.3s;
+        transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+    background-color: #ffa927;
+   
+}
+
+.daysCounter {
+    font-weight: 600;
+    width: 70px;
+}
+
+.totalPrice {
+    width: 150px;
+}
+
+
+.selectedTool {
+background-color: #ffa9275d
+   
+}
+
+.customToast {
+    width: 400px;
+    font-size: 24px;
+    right: 100px;
+}

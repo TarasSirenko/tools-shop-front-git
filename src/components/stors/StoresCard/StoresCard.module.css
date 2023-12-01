@@ -1,0 +1,83 @@
+.storesCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 250px;
+    padding: 20px;
+    background-color: rgb(176, 134, 83);
+    border: 4px solid rgb(72, 72, 72);;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.storesCard:hover {
+    transform: scale(1.01);
+  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+   
+}
+
+.addCard {
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: rgb(58, 58, 58);;
+    transition: fill 0.3s, box-shadow 0.3s, color 0.3s,
+        box-shadow 0.3s;
+
+
+}
+.addCard:hover {
+    color: black
+}
+.addCard:hover .addStoreSvg{
+    fill: black;
+}
+.addText {
+    margin-top: auto;
+    margin-bottom: 5px;
+
+}
+.addStoreSvg {
+    fill: rgb(58, 58, 58);
+        
+}
+.storesTitle {
+    padding: 5px;
+}
+.button {
+    font-size: 14px;
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 10px;
+        margin: 0;
+        background-color: rgb(72, 72, 72);
+        transition: all 250ms linear;
+   
+}
+.button:hover {
+    color: #f79400;
+    background-color: rgb(58, 58, 58);
+}
+           .buttonStore:first-child {
+            margin-bottom: 5px;
+           }
+
+.storeAdresse {
+    font-size: 18px;
+    margin-bottom: auto;
+}
+
+.addStoreBtn {
+    color: rgb(58, 58, 58);
+        
+    position: absolute;
+    background-color: none;
+    font-size:250px;
+    font-weight: 600;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+  
+}
+
