@@ -5,6 +5,8 @@
     max-width: 1600px;
     padding: 20px;
     justify-content: center;
+    align-items: stretch;
+    flex: 1;
 
 }
 
@@ -22,4 +24,20 @@
    
     top: 20px;
     right: 240px;
+}
+
+@media (max-width: 600px) {
+.ToolsContainer {
+
+      
+        padding: 0px;
+      
+        margin-bottom: 5px;
+       
+
+    }
+        .ToastContainer {
+        
+            right: 140px;
+        }
 }

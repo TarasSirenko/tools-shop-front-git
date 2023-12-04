@@ -84,6 +84,8 @@ export default function CartDatePicker({ toolId, dateRange }) {
 
           <DatePicker
             id="startDate"
+            tileClassName={s.tileClassName}
+            calendarClassName={s.datePicker}
             className={s.Calendar}
             onChange={setStartValue}
             ariaLabel="початок"
@@ -98,6 +100,8 @@ export default function CartDatePicker({ toolId, dateRange }) {
           </label>
           <DatePicker
             id="finalDate"
+            tileClassName={s.tileClassName}
+            calendarClassName={s.datePicker}
             className={s.Calendar}
             ariaLabel="кінець"
             onChange={setFinalValue}

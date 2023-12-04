@@ -1,18 +1,27 @@
+.ToolCardItem {
+    flex: 1 0 calc(100%/6);
+    min-width: 220px;
+    max-width: 260px;
+   
+background-color: rgb(77, 77, 77);
+}
 .ToolCardLink {
     display: block;
-    border: 1px solid rgb(216, 216, 216);
-    border-top: 0px;
-   width: 258px;
+    border: 2px solid rgb(83, 83, 83);
+
+   min-height: 350px;
     padding: 10px 20px 40px 20px;
    
-      color: inherit;
+      color: white;
   text-decoration: none;
   cursor: pointer;
-  background-color: rgb(255, 255, 255);
+height: 100%;
 }
 
+
+
 .ToolCardLink:hover {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(212, 212, 212, 0.563);
     transform: translateY(-4px);
     transition: box-shadow 0.3s, transform 0.3s;
 
@@ -25,13 +34,14 @@
     justify-content: space-between;
 }
 .Status{
-    color: white;
-    font-size: 14px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 13px;
     display: inline-block;
-    background-color: #da9022;
+    background-color: rgb(240, 132, 0);
     max-width: 150px;
     padding: 7px 15px;
-    border-radius: 15px;
+    text-transform: uppercase;
 }
 
 .AddToolBtn {
@@ -47,7 +57,7 @@
     cursor: pointer;
 
     transition: fill 200ms linear;
-    margin-left: 50px;
+   
 
     color: inherit;
     border: none;
@@ -60,15 +70,15 @@
 
 .AddToolBtn:hover,
 .AddToolBtn:focus {
-    fill: #da9022;
+    fill:  rgb(240, 132, 0);
 }
 
 .AddToolBtn.active {
-    fill: #da9022;
+    fill:  rgb(240, 132, 0);
 }
 .AddToolBtn::before {
     content: "Додати інструмент у кошик";
-    width: 110px;
+    width: 300px;
     font-size: 12px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
@@ -99,7 +109,19 @@
 
 .ToolCardImage {
     display: block;
-    width: 218px;
+    width: 100%;
+    height: 100%;
+  
+    object-fit: contain;
+
+    padding: 10px;
+}
+
+.ToolCardImageWrapper {
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    height: 215px;
 }
 
 .customToast {
@@ -107,5 +129,52 @@
     width: 400px;
     top: 50px;
     right: 180px;
+    border-radius: 0px;
+    background-color: #707070;
+   color: rgb(255, 255, 255);
 }
 
+@media (max-width: 600px) {
+    .ToolCardLink {
+        width: 50vw;
+    }
+
+        .Status {
+            
+            max-width: 150px;
+            padding: 1.5vw 2vw;
+            font-size: 11px;
+           
+        }
+        .ToolCardItem {
+
+    max-width: 300px;
+   
+
+}
+.customToast {
+    font-size: 18px;
+width: 300px;
+right: 180px;
+top: 0px;
+}
+    
+}
+
+@media (max-width: 500px) {
+
+    .ToolCardItem {
+
+        min-width: 170px;
+
+    }
+}
+@media (max-width: 480px) {
+
+
+
+    .customToast {
+        right: -22vw;
+        width: 70vw;
+    }
+}

@@ -4,8 +4,8 @@
 
 .buttonUser,
 .buttonCart {
-  height: 30px;
-  padding: 0 20px;
+ 
+  padding: 12px 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,6 @@
   cursor: pointer;
 
   transition: fill 200ms linear, color 200ms linear;
-  margin-left: 50px;
 }
 
 
@@ -27,8 +26,8 @@
 .buttonCart:hover,
 .buttonUser:focus,
 .buttonCart:focus {
-  fill: #da9022;
-  color: #da9022;
+  fill: rgb(240, 132, 0);
+  color: rgb(240, 132, 0);
 }
 
 .buttonUser {
@@ -39,5 +38,12 @@
   font-size: 10px;
  
   position: absolute;
-  bottom: -12px;
+  bottom: -2px;
+}
+
+@media (max-width: 800px) {
+.buttonUser,
+  .buttonCart {
+      padding: 12px 12px;
+  }
 }

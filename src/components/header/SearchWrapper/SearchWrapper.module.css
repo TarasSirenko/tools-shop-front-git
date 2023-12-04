@@ -1,0 +1,10 @@
+.searchContainer {
+    display: flex;
+}
+
+
+@media (max-width: 600px) {
+    .searchContainer {
+        display: none;
+    }
+}

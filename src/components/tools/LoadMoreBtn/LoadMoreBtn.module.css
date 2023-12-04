@@ -1,18 +1,25 @@
 
-
-
-
 .LoadMoreBtn {
     display: block;
         border: none;
-        border-radius: 5px;
+
         cursor: pointer;
     padding: 5px 10px;
    margin: 0px auto 40px auto;
-
+text-transform: uppercase;
     font-weight: 700;
     font-size: 18px;
     line-height: 1.172;
-    background-color: #da9022;
+    background-color: rgb(240, 132, 0);
     color: #ffffff;
 }
+
+
+@media (max-width: 600px) {
+   
+.LoadMoreBtn {
+      margin-bottom: 5px;
+      width: 90vw;
+    }
+
+    }

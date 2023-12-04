@@ -1,34 +1,36 @@
 .registrationContainer {
-    padding: 100px 200px;
+margin-top: 50px;
+    padding: 40px;
     text-align: center;
-    /* background-color: bisque; */
-    color: #707070;
+    background-color: rgb(178, 178, 178);
   
 }
 
 .registrationTitle {
-    font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 40px;
+    padding: 10px 15px;
+        color: rgb(240, 132, 0);
+        background-color: rgb(77, 77, 77);
+        font-size: 30px;
+        margin-bottom: 20px;
 }
 
 .registrationBaseInfo {
     font-size: 20px;
-        font-weight: 500;
-        margin-bottom: 40px;
+        font-weight: 400;
+        margin-bottom: 20px;
 }
 
 .registrationButton {
     color: white;
     display: inline-block;
-    background-color: #da9022;
+    background-color: rgb(240, 132, 0);
+    font-weight: 600;
     padding: 10px 20px;
-    border-radius: 5px;
     border: none;
-    font: inherit;
     cursor: pointer;
     outline: inherit;
     transition: box-shadow 0.3s, transform 0.3s;
+    text-transform: uppercase;
 }
 
 .registrationButton:hover {
@@ -37,5 +39,28 @@
 }
 .registrationEmail {
     font-weight: 700;
-    color: #515151;
+    color: #ffffff;
+}
+
+/* ====================================== */
+
+
+@media (max-width: 500px) {
+    .registrationTitle {
+        font-size: 20px;
+        overflow: hidden;
+            text-overflow: ellipsis;
+    }
+        .registrationBaseInfo {
+            font-size: 14px;
+            padding: 0 10px;
+          
+        }
+                .registrationContainer {
+                 
+                    padding: 40px 0px;
+                   
+        
+                }
+     
 }

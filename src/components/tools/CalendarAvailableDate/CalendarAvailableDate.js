@@ -18,6 +18,7 @@ export default function CalendarAvailableDate() {
       <Calendar
         className={s.Calendar}
         onChange={onChange}
+        tileClassName={s.tileClassName}
         value={value}
         tileDisabled={({ activeStartDate, date, view }) => {
           for (const unavailableDate of unavailableDates) {

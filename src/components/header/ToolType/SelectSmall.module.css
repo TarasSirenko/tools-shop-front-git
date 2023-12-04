@@ -1,0 +1,20 @@
+.toolType {
+    width: 200px;
+}
+
+@media (max-width: 1000px) {
+.toolType {
+        width: 80px;
+        padding: 0;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .toolType {
+        width: 29vw;
+        
+    }
+
+}
+

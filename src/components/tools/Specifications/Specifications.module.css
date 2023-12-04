@@ -1,35 +1,66 @@
-/* .specificationsWrapper {
-    margin-right: 10px;
-} */
+.specificationsWrapper {
+    margin-top: 5px;
+    padding: 20px;
+    width: 60.5%;
+    background-color: rgb(77, 77, 77);
+    text-align: center;
+}
 
 .specificationsTitle {
-   margin-bottom: 20px;
-   text-align: center;
+
+    color: white;
+        display: inline-block;
+        background-color: rgb(240, 132, 0);
+            font-size: 17px;
+        padding: 7px 15px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
 }
 
 .specificationsTable {
-    width: 500px;
+  width: 100%;
     border-collapse: collapse;
 }
 
 .specificationsRow:nth-child(odd) {
-    background-color: #f0f0f0;
+    background-color: #6b6b6b;
 }
 
 .specificationsLabel {
     font-size: 14px;
-    /* Размер шрифта для названия характеристики */
     font-weight: 500;
-    /* Жирное начертание для названия характеристики */
     padding: 5px;
-    /* Отступ для названия характеристики */
     text-align: center;
-    /* Выравнивание названия по правому краю */
 }
 
 .specificationsValue {
+    text-align: left;
     font-size: 16px;
-    /* Размер шрифта для значения характеристики (на 2 пикселя больше) */
     padding: 5px;
-    /* Отступ для значения характеристики */
+  
+}
+
+
+@media (max-width: 700px) {
+    .specificationsWrapper {
+        width: 100%;
+
+        margin-bottom: 5px;
+
+    }
+
+}
+@media (max-width: 500px) {
+.specificationsWrapper {
+       
+        padding: 5px;
+      
+    }
+        .specificationsLabel {
+            font-size: 12px;
+        }
+    
+        .specificationsValue {
+            font-size: 12px;
+        }
 }

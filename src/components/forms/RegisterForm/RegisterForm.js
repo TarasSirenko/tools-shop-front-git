@@ -37,6 +37,14 @@ export default function RegisterForm() {
     formState: { errors },
     reset,
   } = useForm();
+  const [emailValue, setEmailValue] = useState('');
+  const [phoneValue, setPhoneValue] = useState('');
+  const handleEmailChange = event => {
+    setEmailValue(event.target.value.trim());
+  };
+  const handlePhoneChange = event => {
+    setPhoneValue(event.target.value.trim());
+  };
 
   const onSubmit = async data => {
     const response = await signupUser(data);
@@ -101,6 +109,8 @@ export default function RegisterForm() {
               name="phone"
               placeholder="Phone"
               autoComplete="phone"
+              value={phoneValue}
+              onChange={handlePhoneChange}
               className={`${s.input} ${errors.phone ? s.invalid : s.valid}`}
             />
           </div>
@@ -128,6 +138,8 @@ export default function RegisterForm() {
               name="email"
               placeholder="Email"
               autoComplete="email"
+              value={emailValue}
+              onChange={handleEmailChange}
               className={`${s.input} ${errors.email ? s.invalid : s.valid}`}
             />
           </div>
@@ -168,7 +180,7 @@ export default function RegisterForm() {
           )}
         </label>
 
-        <input className={s.submit} type="submit" value="Зареєструватися" />
+        <input className={s.submit} type="submit" value="ЗАРЕЕСТРУВАТИСЯ" />
       </form>
     </>
   );

@@ -1,5 +1,6 @@
 import { useGetToolByIdQuery } from 'redux/api/api';
 import { useParams } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 import s from './ToolViews.module.css';
 
@@ -44,6 +45,7 @@ export default function ToolView() {
 
   return (
     <div className={s.Container}>
+      <ToastContainer className={s.ToastContainer} />
       <div className={s.pictureWrapper}>
         <div className={`${s.button} ${s.statusBtn}`}>{status}</div>
         <img

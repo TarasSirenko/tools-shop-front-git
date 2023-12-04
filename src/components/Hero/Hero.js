@@ -10,14 +10,13 @@ function Hero() {
   return (
     <div className={s.Container}>
       <Carousel
-        className={s.Container}
+        className={s.carousel}
         showArrows={true}
         showThumbs={false}
         showStatus={false}
         autoPlay={true}
         interval={3000}
         infiniteLoop={true}
-        width={1600}
         transitionTime={1000}
       >
         <div className={s.Slide}>

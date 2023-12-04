@@ -30,7 +30,7 @@ export default function LoginForm() {
   const [currentResponse, setCurrentResponse] = useState(null);
   const [emailValue, setEmailValue] = useState('');
   const handleEmailChange = event => {
-    setEmailValue(event.target.value);
+    setEmailValue(event.target.value.trim());
   };
   const {
     register,
@@ -60,17 +60,17 @@ export default function LoginForm() {
     console.log(isSuccessCP);
   };
 
-  const handleClick = errors => {
-    if (errors.name)
-      toast.error(errors.name.message, {
-        position: toast.POSITION.TOP_RIGHT,
-      });
+  // const handleClick = errors => {
+  //   if (errors.name)
+  //     toast.error(errors.name.message, {
+  //       position: toast.POSITION.TOP_RIGHT,
+  //     });
 
-    if (errors.password)
-      toast.error(errors.password.message, {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-  };
+  //   if (errors.password)
+  //     toast.error(errors.password.message, {
+  //       position: toast.POSITION.TOP_RIGHT,
+  //     });
+  // };
   const onSubmit = async data => {
     clearErrors('password', 'email');
     const response = await loginUser(data);
@@ -151,7 +151,7 @@ export default function LoginForm() {
               className={s.registerLink}
               onClick={() => setModalContent(<RegisterForm />)}
             >
-              Реєстрацію
+              РЕЕСТРАЦІЮ
             </button>
           </div>
           <label className={s.label}>
@@ -175,6 +175,7 @@ export default function LoginForm() {
                 name="email"
                 placeholder="Email"
                 autoComplete="email"
+                value={emailValue}
                 className={`${s.input} ${errors.email ? s.invalid : s.valid}`}
                 onChange={handleEmailChange}
               />
@@ -220,12 +221,7 @@ export default function LoginForm() {
             )}
           </label>
           <div className={s.loginUpdatePasswordWrapper}>
-            <input
-              className={s.submit}
-              type="submit"
-              value="Вхід"
-              onClick={() => handleClick(errors)}
-            />
+            <input className={s.submit} type="submit" value="ВХІД" />
             <button
               type="button"
               onClick={() => setPassword()}

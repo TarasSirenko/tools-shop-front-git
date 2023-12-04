@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import LoginForm from 'components/forms/LoginForm/LoginForm';
 import { useModalContext } from 'context/ModalContext';
+import SearchWrapperMobile from 'components/header/SearchWrapperMobile/SearchWrapperMobile';
 
 export default function BaseUserViews() {
   const { openModal } = useModalContext();
@@ -17,6 +18,7 @@ export default function BaseUserViews() {
   return (
     <>
       <Hero />
+      <SearchWrapperMobile />
       <ToolsContainer />
     </>
   );

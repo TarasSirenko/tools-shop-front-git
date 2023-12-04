@@ -2,7 +2,7 @@ import s from './Calendar.module.css';
 import { useState } from 'react';
 import CalendarAvailableDate from '../CalendarAvailableDate/CalendarAvailableDate';
 export default function Calendar({ unavailableDates }) {
-  const [isOpenCalendar, setIsOpenCalendar] = useState(false);
+  const [isOpenCalendar, setIsOpenCalendar] = useState(true);
 
   return (
     <div className={s.DateContainar}>

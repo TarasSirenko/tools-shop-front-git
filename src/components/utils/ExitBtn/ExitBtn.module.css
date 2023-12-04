@@ -6,6 +6,7 @@
     fill: white;
     width: 50px;
     height: 50px;
+    margin-right: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,3 +16,9 @@
 .ExiteLink:hover {
     fill: #da9022;
 }
+
+/* @media (min-width: 1000px) {
+    .searchContainer {
+        display: none;
+    }
+} */

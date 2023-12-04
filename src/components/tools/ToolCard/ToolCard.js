@@ -28,7 +28,7 @@ function ToolCard({ toolId, image, name, price, status, catr }) {
   };
   return (
     <>
-      <li>
+      <li className={s.ToolCardItem}>
         <Link to={toolId} className={s.ToolCardLink}>
           <div className={s.ToolCardTopWrapper}>
             <div className={s.Status}>{status}</div>
@@ -40,7 +40,9 @@ function ToolCard({ toolId, image, name, price, status, catr }) {
             </button>
           </div>
 
-          <img className={s.ToolCardImage} src={image} alt="tool imag"></img>
+          <div className={s.ToolCardImageWrapper}>
+            <img className={s.ToolCardImage} src={image} alt="tool imag"></img>
+          </div>
 
           <h3 className={s.ToolName}>{name}</h3>
           <p className={s.Price}>

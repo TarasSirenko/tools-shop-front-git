@@ -25,4 +25,66 @@
     width: 400px;
     top: 50px;
     right: 180px;
+    border-radius: 0px;
+    background-color: #707070;
+    color: rgb(255, 255, 255);
+}
+
+.Calendar {
+    background-color: #707070;
+}
+
+.datePicker {
+    background-color: rgb(182, 182, 182);
+}
+
+.tileClassName {
+    background-color: rgb(182, 182, 182);
+}
+
+.tileClassName:disabled {
+    color: rgb(180, 180, 180);
+    background-color: #818181;
+}
+@media (max-width: 600px) {
+ 
+    .customToast {
+        font-size: 18px;
+        width: 300px;
+        right: 180px;
+        top: 0px;
+    }
+}
+
+@media (max-width: 500px) {
+.bookingDatesList {
+      
+        padding: 2px 0px;
+    }
+        .bookingDatesItem:first-child {
+            margin-right: 5px;
+        }
+
+}
+@media (max-width: 480px) {
+
+
+
+    .customToast {
+        right: -26vw;
+        width: 70vw;
+    }
+}
+@media (max-width: 370px) {
+    .bookingDatesList {
+flex-direction: column;
+width: 200px;
+        
+    }
+        .startDate {
+            margin-bottom: 20px;
+        }
+
+   
+
 }

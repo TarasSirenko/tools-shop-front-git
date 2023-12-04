@@ -1,3 +1,30 @@
 .DatePickerContainar {
     position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    /* width: 100%; */
+}
+.Calendar {
+    background-color: rgb(182, 182, 182);
+}
+
+
+.tileClassName:disabled  {
+    color: rgb(180, 180, 180);
+    background-color: #818181;
+}
+
+
+@media(max-width: 930px) and (min-width: 700px){
+.DatePickerContainar {
+       
+        width: 100%;
+    }
+}
+
+@media (max-width: 350px) {
+    .DatePickerContainar {
+
+        width: 100%;
+    }
 }

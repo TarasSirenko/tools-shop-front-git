@@ -48,8 +48,8 @@ function ToolsContainer() {
     const cart = toolsCart.map(({ toolId }) => toolId);
     return (
       <>
+        <ToastContainer className={s.ToastContainer} />
         <ul className={s.ToolsContainer}>
-          <ToastContainer className={s.ToastContainer} />
           {currentTools.map(({ _id, toolPicture, name, price, status }) => {
             const inTheCart = cart.includes(_id);
             return (

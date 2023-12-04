@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-
 import { useNavigate } from 'react-router-dom';
-
 import { useState, useRef } from 'react';
 
+import myGif from '../img/animation-cart.gif';
 import { ReactComponent as IconCross } from 'svgImage/icon-cross.svg';
 import { deleteFromCart } from 'redux/cart/cart-slice';
 
@@ -66,24 +65,34 @@ export default function CartView() {
 
   if (toolsCart.length === 0) {
     return (
-      <h2 className={s.cartPlaceholder}>Поки нема інструментів у кошику </h2>
+      <div className={s.orderSuccessWrapper}>
+        <h2 className={s.cartPlaceholder}>Поки нема інструментів у кошику </h2>
+        <img src={myGif} alt="my-gif" className={s.myGif} />
+      </div>
     );
   }
 
   if (successOrder) {
     return (
-      <h2 className={s.cartPlaceholder}>
-        Заявка на бронювання успішно надіслінна, протягом наступної години наш
-        менеджер звяжеться з вами. Дякуемо що скорісталися нашим сервісом!!
-        <br />
-        Деталі замовлення ви можете переглянути в архіві (посилання внізу)
-      </h2>
+      <div className={s.orderSuccessWrapper}>
+        <h2 className={s.cartPlaceholder}>
+          Заявка на бронювання успішно надіслінна!{' '}
+        </h2>
+        <p className={s.orderSuccessText}>
+          Протягом наступної години наш менеджер звяжеться з вами. Деталі
+          замовлення ви можете переглянути в архіві (посилання внизу).
+        </p>
+
+        <span className={s.gratitude}>
+          Дякуемо що скорісталися нашим сервісом!
+        </span>
+      </div>
     );
   }
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer className={s.ToastContainer} />
       <div className={s.ToolsContainer}>
         <ul className={s.ToolsList}>
           {toolsCart &&
@@ -105,20 +114,30 @@ export default function CartView() {
                       isSelected ? s.selectedTool : ''
                     }`}
                   >
-                    <img
-                      src={image}
-                      alt="фото інструмента"
-                      className={s.cartToolPicture}
-                      onClick={() => handleLinkClick(toolId)}
-                    />
+                    <div className={s.cartAdeptivWrapper}>
+                      <div className={s.baseInfoWrapper}>
+                        <img
+                          src={image}
+                          alt="фото інструмента"
+                          className={s.cartToolPicture}
+                          onClick={() => handleLinkClick(toolId)}
+                        />
 
-                    <p className={s.toolName}>{name}</p>
-                    <p className={s.toolPrice}>{price} гр/д </p>
-
-                    <CartDatePicker toolId={toolId} dateRange={dateRange} />
-
-                    <p className={s.daysCounter}>Днів: {daysSelected}</p>
-                    <p className={s.totalPrice}>Всього: {orderPrice} грн </p>
+                        <div className={s.datePickerWrapper}>
+                          <p className={s.toolName}>{name}</p>
+                          <p className={s.toolPrice}>{price} гр/д </p>
+                        </div>
+                      </div>
+                      <div className={s.datePickerWrapper}>
+                        <CartDatePicker toolId={toolId} dateRange={dateRange} />
+                        <div className={s.andInfoWrapper}>
+                          <p className={s.daysCounter}>Днів: {daysSelected}</p>
+                          <p className={s.totalPrice}>
+                            Всього: {orderPrice} грн{' '}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                     <button
                       type="button"
                       className={s.removeToolCartBtn}

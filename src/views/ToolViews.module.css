@@ -6,16 +6,25 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-left: 5px solid rgb(244, 169, 39);
-    border-right: 5px solid rgb(244, 169, 39);
-   background-color: white;
+align-items: stretch;
+color: white;
+    /* border-left: 5px solid rgb(244, 169, 39);
+    border-right: 5px solid rgb(244, 169, 39); */
+   /* background-color: rgb(44, 44, 44); */
 }
 
-
+.pictureWrapper {
+    width: 49.4%;
+    margin-right: 4px;
+    padding: 20px;
+background-color: rgb(77, 77, 77);
+}
 
 .toolPicture {
     display: block;
-    width: 400px;
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
    
 }
 .toolName {
@@ -30,20 +39,15 @@
 
 .button {
     color: white;
-    display: inline-block;
-    background-color: #da9022;
+    display: block;
+    background-color: rgb(240, 132, 0);
+    max-width: 135px;
     padding: 7px 15px;
-    border-radius: 15px;
+    font-size: 17px;
+    font-weight: 600;
     border: none;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    transition: box-shadow 0.3s, transform 0.3s;
+    text-transform: uppercase;
 }
-
-
-
-
 
 
 
@@ -53,3 +57,76 @@
     .statusBtn {
 cursor:default
     }
+@media (max-width: 1000px) {
+.Container {
+
+        padding: 20px 10px 350px 10px;
+    }
+}
+
+@media (max-width: 700px) {
+        
+.pictureWrapper {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+     margin-bottom: 5px;
+ }
+ .toolPicture {
+     width: 60%;
+     margin: 0 auto;
+     margin-top: 10px;
+
+ }
+ .statusBtn {margin-left: auto; 
+ }
+ .pictureWrapper {
+    
+     margin-right: 0px;
+  
+ }
+
+
+    .Container {
+
+              padding: 20px 10px;
+          }
+}
+
+@media (max-width: 500px) {
+
+        .Container {
+            padding: 0px;
+            border: 0px;
+        }
+.pictureWrapper {
+    margin-bottom: 2px;
+}
+}
+
+.ToastContainer {
+    width: 20px;
+    height: 20px;
+
+    top: 20px;
+    right: 240px;
+}
+
+@media (max-width: 600px) {
+    .ToolsContainer {
+
+
+        padding: 0px;
+
+        margin-bottom: 5px;
+
+
+    }
+
+    .ToastContainer {
+
+
+        top: 20px;
+        right: 140px;
+    }
+}

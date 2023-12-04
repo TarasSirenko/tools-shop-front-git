@@ -1,9 +1,9 @@
 .info {
     position: relative;
-    border: 1px solid rgb(169, 169, 169);
     padding: 20px;
-    width: 350px;
-    margin-bottom: 60px;
+    width: 50%;
+   min-width: 300px;
+background-color: rgb(77, 77, 77);
 }
 
 .addButtonWrapper {
@@ -15,26 +15,30 @@
 
 
 .toolName {
-    padding-left: 20px;
+    padding:0px 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   
+   
 }
 
 .button {
     color: white;
     display: inline-block;
-    background-color: #da9022;
+    background-color: rgb(240, 132, 0);;
     padding: 7px 15px;
-    border-radius: 15px;
     border: none;
-    font: inherit;
     cursor: pointer;
     outline: inherit;
     transition: box-shadow 0.3s, transform 0.3s;
+    text-transform: uppercase;
 }
 
 
 
 .addButton {
-    font-size: 20px;
+    font-size: 17px;
+    font-weight: 600;
     width: 150px;
 }
 
@@ -54,13 +58,61 @@
 .customToast {
     font-size: 24px;
     width: 400px;
-    top: -24px;
-    right: 300px;
+    top: 50px;
+    right: 180px;
+    border-radius: 0px;
+    background-color: #707070;
+    color: rgb(255, 255, 255);
 }
-.ToastContainer {
-    width: 20px;
-    height: 20px;
-    position: absolute;
- top: 0px;
- right: 0px;
+
+
+@media (max-width: 1000px) {
+.toolName {
+        padding-left: 0px;
+        max-width: 200px;
+        font-size: 20px;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+.info {
+        width: 100%;
+        
+    }
+        .addButton {
+           padding: 5px;
+           font-size: 16px;
+        }
+                .toolName {
+                    padding: 0px 5px;
+                   
+                }
+                                .customToast {
+                                 
+                                    top: 0px;
+                                
+                                 
+                                }
+     
+}
+
+@media (max-width: 600px) {
+.customToast {
+        font-size: 18px;
+        width: 300px;
+        right: 200px;
+    }
+}
+@media (max-width: 480px) {
+
+    .customToast {
+        right: -22vw;
+        width: 70vw;
+    }
 }

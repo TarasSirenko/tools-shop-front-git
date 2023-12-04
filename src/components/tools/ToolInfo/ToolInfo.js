@@ -2,7 +2,7 @@ import s from './ToolInfo.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addToCart } from 'redux/cart/cart-slice';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 function ToolInfo({
   image,
@@ -31,7 +31,6 @@ function ToolInfo({
   };
   return (
     <>
-      <ToastContainer className={s.ToastContainer} />
       <div className={s.info}>
         <div className={s.addButtonWrapper}>
           <h2 className={s.toolName}>{name}</h2>
@@ -45,7 +44,7 @@ function ToolInfo({
 
         <h3 className={s.price}>Ціна: {price}грн/день</h3>
 
-        <h3 className={s.descriptionTitle}>Опис:</h3>
+        <h3 className={s.descriptionTitle}>Опис</h3>
         <p className={s.descriptionList}>{description}</p>
 
         <p className={s.type}>

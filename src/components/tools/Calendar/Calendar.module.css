@@ -1,21 +1,27 @@
 .DateContainar {
+margin-top: 5px;
+padding-top: 20px;
     position: relative;
     text-align: center;
-    width: 350px;
+    width: 39%;
+    background-color:rgb(77, 77, 77);
+    min-height: 360px;
 }
 
 
 .button {
     color: white;
     display: inline-block;
-    background-color: #da9022;
+    background-color: rgb(240, 132, 0);
     padding: 7px 15px;
-    border-radius: 15px;
     border: none;
     font: inherit;
     cursor: pointer;
     outline: inherit;
     transition: box-shadow 0.3s, transform 0.3s;
+    text-transform: uppercase;
+    font-weight: 600;
+        font-size: 17px;
 }
 
 .openCalendar {
@@ -26,4 +32,12 @@
 .openCalendar:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(2px);
+}
+
+@media (max-width: 700px) {
+    .DateContainar {
+        width: 100%;
+margin-top: 0px;
+    }
+
 }

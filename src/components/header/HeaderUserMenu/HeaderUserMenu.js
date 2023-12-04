@@ -1,7 +1,7 @@
 import { ReactComponent as IconUser } from 'svgImage/icon-user.svg';
 import { ReactComponent as IconCart } from 'svgImage/icon-cart.svg';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
 import React from 'react';
@@ -48,9 +48,8 @@ function HeaderUserMenu() {
   }, []);
 
   return (
-    <div className={s.container}>
+    <nav className={s.container}>
       <Link to="login">
-        {/* {currentUser.isLoggedIn && } */}
         <button
           type="button"
           className={s.buttonUser}
@@ -72,7 +71,7 @@ function HeaderUserMenu() {
           <IconCart width={27} height={30} />
         </button>
       </Link>
-    </div>
+    </nav>
   );
 }
 

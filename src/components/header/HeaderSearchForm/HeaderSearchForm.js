@@ -1,6 +1,7 @@
 import { ReactComponent as IconSearch } from 'svgImage/icon-search.svg';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import ToolType from '../ToolType/ToolType';
 
 import citys from './CityData.json';
 
@@ -14,7 +15,9 @@ import { useNavigate } from 'react-router-dom';
 
 function HeaderSearchForm() {
   const [searchInput, setSearchInput] = useState('');
-  const [storeCity, setStoreCity] = useState('Вся Україна');
+  const [storeCity, setStoreCity] = useState(
+    window.innerWidth < 1000 ? 'Україна' : 'Вся Україна',
+  );
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -61,11 +64,10 @@ function HeaderSearchForm() {
 
   const selectStyles = {
     borderRadius: '0px',
-    color: 'black',
-    minWidth: '180px',
+    // color: 'black',
+    maxWidth: '180px',
     '& .MuiSelect-select': {
       padding: '8px 0px 5px 10px',
-      backgroundColor: 'white',
       borderRadius: '0px',
       borderLeft: '1px solid #707070',
     },
@@ -78,7 +80,7 @@ function HeaderSearchForm() {
   return (
     <form className={s.form} onSubmit={submitSearchForm}>
       <label className={s.label}>
-        <IconSearch className={s.iconSearch} width={13} height={13} />
+        <IconSearch className={s.iconSearch} width={16} height={16} />
         <input
           type="text"
           placeholder="Я шукаю..."
@@ -88,23 +90,29 @@ function HeaderSearchForm() {
         />
       </label>
 
-      <Select
-        labelId="demo-simple-select-autowidth-label"
-        id="demo-simple-select-autowidth"
-        value={storeCity}
-        onChange={handleChange}
-        autoWidth
-        sx={selectStyles}
-      >
-        {citys &&
-          citys.map(city => {
-            return (
-              <MenuItem value={city} key={city}>
-                {city}
-              </MenuItem>
-            );
-          })}
-      </Select>
+      <div className={s.wrapperSelect}>
+        <Select
+          labelId="demo-simple-select-autowidth-label"
+          id="demo-simple-select-autowidth"
+          value={storeCity}
+          onChange={handleChange}
+          autoWidth
+          className={s.country}
+          sx={selectStyles}
+        >
+          {citys &&
+            citys.map(city => {
+              return (
+                <MenuItem value={city} key={city}>
+                  {city}
+                </MenuItem>
+              );
+            })}
+        </Select>
+      </div>
+      <div className={s.toolTypeSelect}>
+        <ToolType />
+      </div>
 
       <button type="submit" className={s.submit}>
         Знайти
@@ -114,30 +122,3 @@ function HeaderSearchForm() {
 }
 
 export default HeaderSearchForm;
-
-// "Вінниця",
-//   "Волинь",
-//   "Дніпро",
-//   "Донецьк",
-//   "Житомир",
-//   "Закарпаття",
-//   "Запоріжжя",
-//   "Івано-Франківськ",
-//   "Київ",
-//   "Київська область",
-//   "Кропивницький",
-//   "Луганськ",
-//   "Луцьк",
-//   "Львів",
-//   "Миколаїв",
-//   "Одеса",
-//   "Полтава",
-//   "Рівне",
-//   "Суми",
-//   "Тернопіль",
-//   "Ужгород",
-//   "Харків",
-//   "Херсон",
-//   "Хмельницький",
-//   "Черкаси",
-//   "Чернівці",
