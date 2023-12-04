@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/tools-shop-front-git/static/css/main.8b7ac734.css",
-    "main.js": "/tools-shop-front-git/static/js/main.bc250dd8.js",
+    "main.css": "/tools-shop-front-git/static/css/main.c756a218.css",
+    "main.js": "/tools-shop-front-git/static/js/main.57189a8e.js",
     "static/media/b9c64a23.png": "/tools-shop-front-git/static/media/b9c64a23.c98158bbe49e73a29737.png",
     "static/media/instrument-hero.jpg": "/tools-shop-front-git/static/media/instrument-hero.e3dee3eda6cd3f2a88e4.jpg",
     "static/media/tool_dm_man.png": "/tools-shop-front-git/static/media/tool_dm_man.4916272814afc836d9ed.png",
+    "static/media/animation-cart.gif": "/tools-shop-front-git/static/media/animation-cart.7d2e7459a17e63994787.gif",
     "static/media/instrument-dm.jpg": "/tools-shop-front-git/static/media/instrument-dm.bbf971f74e7bdea32c95.jpg",
     "static/media/icon-hide.svg": "/tools-shop-front-git/static/media/icon-hide.35d584e3d63908aa999bf6b25df15e18.svg",
     "static/media/icon-cross.svg": "/tools-shop-front-git/static/media/icon-cross.bd8c7d2eee8aa250bfc23fc6f9023b95.svg",
@@ -19,11 +20,11 @@
     "static/media/lock.svg": "/tools-shop-front-git/static/media/lock.08be67da329c1b69a50c34a0a5faccbb.svg",
     "static/media/icon-exit.svg": "/tools-shop-front-git/static/media/icon-exit.0640b79b13a8afa13c98ff01566a7a43.svg",
     "static/media/phone.svg": "/tools-shop-front-git/static/media/phone.a7bf6d8536230b77bf2598213f685259.svg",
-    "main.8b7ac734.css.map": "/tools-shop-front-git/static/css/main.8b7ac734.css.map",
-    "main.bc250dd8.js.map": "/tools-shop-front-git/static/js/main.bc250dd8.js.map"
+    "main.c756a218.css.map": "/tools-shop-front-git/static/css/main.c756a218.css.map",
+    "main.57189a8e.js.map": "/tools-shop-front-git/static/js/main.57189a8e.js.map"
   },
   "entrypoints": [
-    "static/css/main.8b7ac734.css",
-    "static/js/main.bc250dd8.js"
+    "static/css/main.c756a218.css",
+    "static/js/main.57189a8e.js"
   ]
 }
