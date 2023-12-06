@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/tools-shop-front-git/static/css/main.9e8c46b2.css",
-    "main.js": "/tools-shop-front-git/static/js/main.73072332.js",
+    "main.css": "/tools-shop-front-git/static/css/main.b71ded78.css",
+    "main.js": "/tools-shop-front-git/static/js/main.e903fb6a.js",
     "static/media/b9c64a23.png": "/tools-shop-front-git/static/media/b9c64a23.c98158bbe49e73a29737.png",
     "static/media/instrument-hero.jpg": "/tools-shop-front-git/static/media/instrument-hero.e3dee3eda6cd3f2a88e4.jpg",
     "static/media/tool_dm_man.png": "/tools-shop-front-git/static/media/tool_dm_man.4916272814afc836d9ed.png",
@@ -20,11 +20,11 @@
     "static/media/lock.svg": "/tools-shop-front-git/static/media/lock.08be67da329c1b69a50c34a0a5faccbb.svg",
     "static/media/icon-exit.svg": "/tools-shop-front-git/static/media/icon-exit.0640b79b13a8afa13c98ff01566a7a43.svg",
     "static/media/phone.svg": "/tools-shop-front-git/static/media/phone.a7bf6d8536230b77bf2598213f685259.svg",
-    "main.9e8c46b2.css.map": "/tools-shop-front-git/static/css/main.9e8c46b2.css.map",
-    "main.73072332.js.map": "/tools-shop-front-git/static/js/main.73072332.js.map"
+    "main.b71ded78.css.map": "/tools-shop-front-git/static/css/main.b71ded78.css.map",
+    "main.e903fb6a.js.map": "/tools-shop-front-git/static/js/main.e903fb6a.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e8c46b2.css",
-    "static/js/main.73072332.js"
+    "static/css/main.b71ded78.css",
+    "static/js/main.e903fb6a.js"
   ]
 }
