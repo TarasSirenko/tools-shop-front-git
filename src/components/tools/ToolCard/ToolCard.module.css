@@ -76,7 +76,7 @@ height: 100%;
 .AddToolBtn.active {
     fill:  rgb(240, 132, 0);
 }
-.AddToolBtn::before {
+/* .AddToolBtn::before {
     content: "Додати інструмент у кошик";
     width: 300px;
     font-size: 12px;
@@ -90,7 +90,7 @@ height: 100%;
     transition: opacity 0.2s ease-in-out;
     top: 45px;
     right:  5px;
-}
+} */
 
 .AddToolBtn:hover::before {
     visibility: visible;
@@ -135,9 +135,7 @@ height: 100%;
 }
 
 @media (max-width: 600px) {
-    .ToolCardLink {
-        width: 50vw;
-    }
+
 
         .Status {
             
@@ -148,7 +146,7 @@ height: 100%;
         }
         .ToolCardItem {
 
-    max-width: 300px;
+    max-width: 50vw;
    
 
 }

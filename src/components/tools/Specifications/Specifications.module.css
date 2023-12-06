@@ -53,7 +53,7 @@
 @media (max-width: 500px) {
 .specificationsWrapper {
        
-        padding: 5px;
+        padding: 20px 5px ;
       
     }
         .specificationsLabel {
@@ -63,4 +63,5 @@
         .specificationsValue {
             font-size: 12px;
         }
+
 }

@@ -11,7 +11,7 @@ export default function Calendar({ unavailableDates }) {
         className={`${s.button} ${s.openCalendar}`}
         onClick={() => setIsOpenCalendar(!isOpenCalendar)}
       >
-        Переглянуты вільні даты
+        Переглянути вільні дати
       </button>
       {isOpenCalendar && (
         <CalendarAvailableDate unavailableDates={unavailableDates} />
